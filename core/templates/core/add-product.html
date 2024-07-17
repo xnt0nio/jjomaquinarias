@@ -1,0 +1,192 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block css %}
+<!-- Asegúrate de tener el CSS de Bootstrap cargado -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<style>
+    /* Estilo para la línea horizontal */
+    .horizontal-line {
+        border-top: 1px solid #ccc; /* Color y grosor de la línea */
+        margin-top: 20px; /* Margen superior para separación */
+        margin-bottom: 20px; /* Margen inferior para separación */
+    }
+
+    /* Estilo para los títulos */
+    .custom-title {
+        color: orange; /* Color naranja */
+        text-align: center; /* Centrado del texto */
+        margin-bottom: 20px; /* Margen inferior para separación */
+    }
+</style>
+{% endblock %}
+
+{% block contenido %}
+
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="custom-title">Añadir Producto</h2>
+                </div>
+
+               
+                <div class="card-body">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        
+                        <!-- Campos generales -->
+                        <div class="form-group">
+                            <label for="{{ form.nombre.id_for_label }}">{{ form.nombre.label }}</label>
+                            {{ form.nombre }}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="{{ form.stock.id_for_label }}">{{ form.stock.label }}</label>
+                            {{ form.stock }}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="{{ form.descripcion.id_for_label }}">{{ form.descripcion.label }}:</label>
+                            {{ form.descripcion }}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="{{ form.tipo.id_for_label }}">{{ form.tipo.label }}</label>
+                            {{ form.tipo }}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="{{ form.imagen.id_for_label }}">{{ form.imagen.label }}</label>
+                            {{ form.imagen }}
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="form-group-title">
+                                        <label for="{{ form.vigente.id_for_label }}">{{ form.vigente.label }}:</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    {{ form.vigente }}
+                                </div>
+                            </div>
+                        </div>
+                        
+                   
+                        <hr class="mb-5"
+                        style="background-color: #bcc2b4; opacity: 1;">
+
+                
+                        
+                        <!-- Título 1 -->
+                        <div class="form-group">
+                            <h3 class="custom-title">Especificaciones</h3>
+                            <label for="{{ form.marca.id_for_label }}">{{ form.marca.label }}</label>
+                            {{ form.marca }}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="{{ form.modelo.id_for_label }}">{{ form.modelo.label }}</label>
+                            {{ form.modelo }}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="{{ form.motor.id_for_label }}">{{ form.motor.label }}</label>
+                            {{ form.motor }}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="{{ form.potencia.id_for_label }}">{{ form.potencia.label }}</label>
+                            {{ form.potencia }}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="{{ form.traccion.id_for_label }}">{{ form.traccion.label }}</label>
+                            {{ form.traccion }}
+                        </div>
+
+                             <!-- Checkbox Aire Acondicionado -->
+                             <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="form-group-title">
+                                            <label for="{{ form.aire_acondicionado.id_for_label }}">{{ form.aire_acondicionado.label }}:</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        {{ form.aire_acondicionado }}
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        <div class="form-group">
+                            <label for="{{ form.alimentacion.id_for_label }}">{{ form.alimentacion.label }}</label>
+                            {{ form.alimentacion }}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="{{ form.neumaticos.id_for_label }}">{{ form.neumaticos.label }}</label>
+                            {{ form.neumaticos }}
+                        </div>
+
+
+                        <hr class="mb-4"
+                        style="background-color: #bcc2b4; opacity: 1;">
+                        
+                        <!-- Título 2 -->
+                        <div class="form-group">
+                            <h3 class="custom-title">Caracteristicas</h3>
+                            <label for="{{ form.marca.id_for_label }}">{{ form.marca.label }}</label>
+                            {{ form.marca }}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="{{ form.caracteristica_1_descripcion.id_for_label }}">{{ form.caracteristica_1_descripcion.label }}</label>
+                            {{ form.caracteristica_1_descripcion }}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="{{ form.caracteristica_2_titulo.id_for_label }}">{{ form.caracteristica_2_titulo.label }}</label>
+                            {{ form.caracteristica_2_titulo }}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="{{ form.caracteristica_2_descripcion.id_for_label }}">{{ form.caracteristica_2_descripcion.label }}</label>
+                            {{ form.caracteristica_2_descripcion }}
+                        </div>
+                        
+                        <!-- Botón de guardar -->
+                        <button type="submit" class="btn btn-success">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<!-- Integración de SweetAlert (si es necesario) -->
+{% if messages %}
+    {% for aux in messages %}
+        <script>
+            Swal.fire({
+                title: 'Confirmación',
+                text: '{{ aux }}',
+                icon: 'success',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Aceptar'
+            })
+        </script>
+    {% endfor %}
+{% endif %}
+{% endblock %}
