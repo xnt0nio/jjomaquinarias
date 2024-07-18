@@ -45,9 +45,9 @@
 				<div class="section-title">
 					<h4 class="text-center"><span class="orange-text">precio sujeto</span> a cotización</h4>
 
-					<a class="cart-btn"
-						style="max-width: 200px; width: auto; display: block; margin: 0 auto 5px; padding: 0.5em 1em;">
-						<i class="fas fa-shopping-cart"></i> Agregar al carrito
+					<a class="cart-btn" href="mailto:ventas@jjomaquinarias.cl"
+						style="max-width: 200px; width: auto; display: flex; align-items: center; justify-content: center; margin: 0 auto 5px; padding: 0.5em 1em;">
+						<i class="fas fa-file-alt" id="quote-icon" style="margin-right: 0.5em;"></i> Cotizar
 					</a>
 				</div>
 			</div>
@@ -56,10 +56,10 @@
 
 	<div class="list-section pt-80 pb-80">
 		<div class="container">
-	
+
 			<div class="row" style="margin-bottom: 40px;">
 				{% if producto.marca %}
-				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-5">
 					<div class="list-box d-flex align-items-center">
 						<div class="list-icon">
 							<i class="fas fa-tag"></i> <!-- Icono para "Marca" -->
@@ -71,9 +71,9 @@
 					</div>
 				</div>
 				{% endif %}
-				
+
 				{% if producto.modelo %}
-				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-5">
 					<div class="list-box d-flex align-items-center">
 						<div class="list-icon">
 							<i class="fas fa-car"></i> <!-- Icono para "Modelo" -->
@@ -85,7 +85,7 @@
 					</div>
 				</div>
 				{% endif %}
-				
+
 				{% if producto.motor %}
 				<div class="col-lg-4 col-md-6">
 					<div class="list-box d-flex justify-content-start align-items-center">
@@ -99,11 +99,9 @@
 					</div>
 				</div>
 				{% endif %}
-			</div>
-	
-			<div class="row" style="margin-bottom: 40px;">
+
 				{% if producto.potencia %}
-				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-5">
 					<div class="list-box d-flex align-items-center">
 						<div class="list-icon">
 							<i class="fas fa-bolt"></i> <!-- Icono para "Potencia" -->
@@ -115,9 +113,9 @@
 					</div>
 				</div>
 				{% endif %}
-				
+
 				{% if producto.traccion %}
-				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-5">
 					<div class="list-box d-flex align-items-center">
 						<div class="list-icon">
 							<i class="fas fa-road"></i> <!-- Icono para "Tracción" -->
@@ -129,7 +127,7 @@
 					</div>
 				</div>
 				{% endif %}
-				
+
 				{% if producto.aire_acondicionado %}
 				<div class="col-lg-4 col-md-6">
 					<div class="list-box d-flex justify-content-start align-items-center">
@@ -143,11 +141,8 @@
 					</div>
 				</div>
 				{% endif %}
-			</div>
-	
-			<div class="row" style="margin-bottom: 40px;">
 				{% if producto.alimentacion %}
-				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-5">
 					<div class="list-box d-flex align-items-center">
 						<div class="list-icon">
 							<i class="fas fa-gas-pump"></i> <!-- Icono para "Alimentación" -->
@@ -159,9 +154,9 @@
 					</div>
 				</div>
 				{% endif %}
-				
+
 				{% if producto.neumaticos %}
-				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+				<div class="col-lg-4 col-md-6 mb-4 mb-lg-5">
 					<div class="list-box d-flex align-items-center">
 						<div class="list-icon">
 							<i class="fas fa-circle"></i> <!-- Icono para "Neumáticos" -->
@@ -173,12 +168,17 @@
 					</div>
 				</div>
 				{% endif %}
+
 			</div>
-	
+
+
+
+
+
 		</div>
 	</div>
-	
-	
+
+
 	{% endfor %}
 </div>
 <!-- end single product -->
