@@ -1,4 +1,11 @@
-/*Template Name: Fruitkha - Responsive Bootstrap4 Shop TemplateTemplate URI: Description: Bootstrap template for fruits or any other kind of shopAuthor: Imran HossainAuthor URI: https://imransdesign.com/Version: 1.0*/
+/*
+Template Name: Fruitkha - Responsive Bootstrap4 Shop Template
+Template URI: 
+Description: Bootstrap template for fruits or any other kind of shop
+Author: Imran Hossain
+Author URI: https://imransdesign.com/
+Version: 1.0
+*/
 /* -----------------------------------------------------------------------------
 
 # Base - Genral & Typography
@@ -17,7 +24,7 @@ body {
   font-size: 1rem;
   letter-spacing: 0.1px;
   line-height: 1.8;
-  color: #051922;
+  color: #263e58;
   overflow-x: hidden;
 }
 
@@ -34,7 +41,7 @@ a {
 }
 
 a:hover {
-  color: #F28123;
+  color: #ffde59;
   text-decoration: none;
 }
 
@@ -47,7 +54,7 @@ h6, .h6 {
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   margin: 0 0 1.25rem 0;
-  color: #051922;
+  color: #263e58;
 }
 
 h1:last-child, .h1:last-child,
@@ -143,7 +150,7 @@ p {
   font-size: 1rem;
   letter-spacing: 0.1px;
   line-height: 1.8;
-  color: #051922;
+  color: #263e58;
   margin: 0 0 1.25rem 0;
 }
 
@@ -198,7 +205,7 @@ p:last-child {
   position: absolute;
   top: calc(50% - 3vmax);
   left: calc(50% - 3vmax);
-  border-left: 3px solid #F28123;
+  border-left: 3px solid #ffde59;
   border-radius: 100%;
   -webkit-animation: spinLeft 800ms linear infinite;
   animation: spinLeft 800ms linear infinite;
@@ -212,7 +219,7 @@ p:last-child {
   position: absolute;
   top: calc(50% - 3vmax);
   left: calc(50% - 3vmax);
-  border-left: 3px solid #F28123;
+  border-left: 3px solid #ffde59;
   border-radius: 100%;
   -webkit-animation: spinLeft 800ms linear infinite;
   animation: spinLeft 800ms linear infinite;
@@ -395,7 +402,7 @@ p:last-child {
 }
 
 .orange-text {
-  color: #F28123;
+  color: #ffde59;
 }
 
 .blue-bg {
@@ -405,7 +412,7 @@ p:last-child {
 a.boxed-btn {
   font-family: 'Poppins', sans-serif;
   display: inline-block;
-  background-color: #F28123;
+  background-color: #ffde59;
   color: #fff;
   padding: 10px 20px;
 }
@@ -414,14 +421,14 @@ a.bordered-btn {
   font-family: 'Poppins', sans-serif;
   display: inline-block;
   color: #fff;
-  border: 2px solid #F28123;
+  border: 2px solid #ffde59;
   padding: 7px 20px;
 }
 
 a.read-more-btn {
   display: inline-block;
   margin-top: 15px;
-  color: #051922;
+  color: #263e58;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -429,7 +436,7 @@ a.read-more-btn {
 }
 
 a.read-more-btn:hover {
-  color: #F28123;
+  color: #ffde59;
 }
 
 a.boxed-btn, a.bordered-btn, a.cart-btn {
@@ -450,7 +457,7 @@ a.boxed-btn, a.bordered-btn, a.cart-btn {
   bottom: 0px;
   width: 50px;
   height: 2px;
-  background-color: #F28123;
+  background-color: #ffde59;
   margin: 0 auto;
 }
 
@@ -472,7 +479,7 @@ a.boxed-btn, a.bordered-btn, a.cart-btn {
 }
 
 .breadcrumb-text p {
-  color: #F28123;
+  color: #ffde59;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 7px;
@@ -514,7 +521,7 @@ a.boxed-btn, a.bordered-btn, a.cart-btn {
 
 ----------------------------------------------------------------------------- */
 ul.navbar-nav li.nav-item a.nav-link, ul.navbar-nav li.nav-item.active a.nav-link {
-  color: #051922;
+  color: #263e58;
 }
 
 .top-header-area {
@@ -542,6 +549,7 @@ nav.main-menu ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  
 }
 
 nav.main-menu ul li {
@@ -604,8 +612,16 @@ nav.main-menu > ul li:last-child {
 
 .site-logo {
   float: left;
-  max-width: 150px;
+  width: 100px; /* Tamaño inicial para pantallas grandes */
 }
+
+@media (max-width: 1100px) {
+  .site-logo {
+      display: none; /* Ocultar el logo en dispositivos móviles */
+  }
+}
+
+
 
 ul.sub-menu li:last-child {
   float: none !important;
@@ -619,7 +635,7 @@ ul.sub-menu li:last-child {
 }
 
 .mean-bar a.meanmenu-reveal {
-  background-color: #F28123;
+  background-color: #ffde59;
 }
 
 .main-menu-wrap {
@@ -627,11 +643,11 @@ ul.sub-menu li:last-child {
 }
 
 .mean-container a.meanmenu-reveal {
-  color: #051922;
+  color: #263e58;
 }
 
 .mean-container a.meanmenu-reveal span {
-  background-color: #051922;
+  background-color: #263e58;
 }
 
 .mean-container .mean-nav ul li a {
@@ -668,7 +684,7 @@ nav.mean-nav > ul > li:first-child > a {
 }
 
 .top-header-area.sepherate-header ul li > a, .top-header-area.sepherate-header .header-icons a {
-  color: #051922;
+  color: #263e58;
 }
 
 nav.main-menu ul ul.sub-menu li {
@@ -683,11 +699,11 @@ nav.main-menu ul ul.sub-menu li a {
 }
 
 nav.main-menu ul li.current-list-item > a {
-  color: #F28123;
+  color: #ffde59;
 }
 
 nav.main-menu li:hover > a {
-  color: #F28123;
+  color: #ffde59;
 }
 
 nav.main-menu li a {
@@ -703,7 +719,7 @@ nav.main-menu li a {
 }
 
 .top-header-area .header-icons a:hover {
-  color: #F28123;
+  color: #ffde59;
 }
 
 .sticky-wrapper {
@@ -715,7 +731,7 @@ nav.main-menu li a {
 }
 
 .sticky-wrapper.is-sticky .top-header-area {
-  background-color: #051922;
+  background-color: #263e58;
   padding: 15px 0;
 }
 
@@ -734,7 +750,7 @@ ul.navbar-nav {
   left: 0;
   top: 0;
   z-index: 5555;
-  background-color: #051922;
+  background-color: #263e58;
   width: 100%;
   height: 100%;
   text-align: center;
@@ -777,7 +793,7 @@ a.mobile-show {
   padding: 15px;
   width: 60%;
   background-color: transparent;
-  border-bottom: 1px solid #F28123;
+  border-bottom: 1px solid #ffde59;
   display: block;
   margin: 0 auto;
   text-align: center;
@@ -789,7 +805,7 @@ a.mobile-show {
 
 .search-bar-tablecell button[type=submit] {
   border: none;
-  background-color: #F28123;
+  background-color: #ffde59;
   padding: 15px 30px;
   cursor: pointer;
   display: inline-block;
@@ -855,7 +871,7 @@ a.mobile-show {
 }
 
 .footer-area {
-  background-color: #051922;
+  background-color: #263e58;
   color: #fff;
   padding: 150px 0;
 }
@@ -874,7 +890,7 @@ h2.widget-title:after {
   bottom: 0;
   width: 20px;
   height: 2px;
-  background-color: #F28123;
+  background-color: #ffde59;
   content: "";
 }
 
@@ -914,7 +930,7 @@ h2.widget-title:after {
   width: 20%;
   border: none;
   background-color: #012738;
-  color: #F28123;
+  color: #ffde59;
   padding: 14px 0;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
@@ -926,8 +942,8 @@ h2.widget-title:after {
 }
 
 .copyright {
-  background-color: #051922;
-  border-top: 1px solid #232a35;
+  background-color: #263e58;
+  border-top: 1px solid #263e58;
 }
 
 .copyright p {
@@ -939,12 +955,12 @@ h2.widget-title:after {
 }
 
 .copyright a {
-  color: #F28123;
+  color: #ffde59;
   font-weight: 700;
 }
 
 .copyright a:hover {
-  color: #f59d53;
+  color: #ffde59;
 }
 
 .social-icons ul {
@@ -981,7 +997,7 @@ h2.widget-title:after {
   content: "\f105";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  color: #F28123;
+  color: #ffde59;
 }
 
 /* -----------------------------------------------------------------------------
@@ -1006,8 +1022,8 @@ a.boxed-btn {
 }
 
 a.boxed-btn:hover {
-  background-color: #051922;
-  color: #F28123;
+  background-color: #263e58;
+  color: #ffde59;
 }
 
 a.bordered-btn {
@@ -1017,7 +1033,7 @@ a.bordered-btn {
 }
 
 a.bordered-btn:hover {
-  background-color: #F28123;
+  background-color: #ffde59;
   color: #fff;
 }
 
@@ -1028,7 +1044,7 @@ ul.sub-menu a {
 }
 
 ul.sub-menu li:hover a {
-  color: #F28123;
+  color: #ffde59;
 }
 
 .single-tof-box {
@@ -1050,7 +1066,7 @@ a.video-play-btn {
 
 a.video-play-btn:hover {
   background-color: #333;
-  color: #F28123;
+  color: #ffde59;
 }
 
 .latest-news-bg {
@@ -1076,7 +1092,7 @@ a.tof-btn i {
 }
 
 a.tof-btn:hover {
-  color: #F28123;
+  color: #ffde59;
 }
 
 a.tof-btn:hover i {
@@ -1115,7 +1131,7 @@ a.tof-btn:hover i {
 }
 
 .footer-box.pages ul li:hover a {
-  color: #F28123;
+  color: #ffde59;
 }
 
 .footer-box.subscribe form button {
@@ -1125,12 +1141,12 @@ a.tof-btn:hover i {
 }
 
 .footer-box.subscribe form button:hover {
-  background-color: #F28123;
-  color: #051922;
+  background-color: #ffde59;
+  color: #263e58;
 }
 
 .social-icons ul li:hover a {
-  color: #F28123;
+  color: #ffde59;
 }
 
 .social-icons ul li a {
@@ -1146,8 +1162,8 @@ ul.social-link-team li a {
 }
 
 ul.social-link-team li a:hover {
-  background-color: #051922;
-  color: #F28123;
+  background-color: #263e58;
+  color: #ffde59;
 }
 
 .counter-box {
@@ -1169,8 +1185,8 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #051922;
-  color: #F28123;
+  background-color: #263e58;
+  color: #ffde59;
 }
 
 div.owl-controls, .owl-controls div {
@@ -1190,7 +1206,7 @@ div.owl-controls div.owl-nav div:hover {
 }
 
 .pagination-wrap ul li:hover a {
-  background-color: #F28123;
+  background-color: #ffde59;
 }
 
 .icons a i {
@@ -1200,7 +1216,7 @@ div.owl-controls div.owl-nav div:hover {
 }
 
 .icons a:hover i {
-  color: #F28123;
+  color: #ffde59;
 }
 
 .tof-text a.tof-btn {
@@ -1237,8 +1253,8 @@ a.cart-btn {
 }
 
 a.cart-btn:hover {
-  background-color: #051922;
-  color: #F28123;
+  background-color: #263e58;
+  color: #ffde59;
 }
 
 .recent-posts ul li {
@@ -1258,7 +1274,7 @@ ul.sub-menu li a {
 }
 
 ul.sub-menu li:hover a {
-  color: #F28123 !important;
+  color: #ffde59 !important;
 }
 
 .sidebar-section ul li a {
@@ -1278,7 +1294,7 @@ ul.sub-menu li:hover a {
 }
 
 .comment-text-body h4 a:hover {
-  color: #F28123;
+  color: #ffde59;
 }
 
 ul.product-share li a {
@@ -1288,7 +1304,7 @@ ul.product-share li a {
 }
 
 ul.product-share li:hover a {
-  color: #F28123;
+  color: #ffde59;
 }
 
 .service-menu ul li a {
@@ -1345,7 +1361,7 @@ a.mobile-show.search-bar-icon {
 }
 
 a.mobile-show.search-bar-icon:hover {
-  color: #F28123;
+  color: #ffde59;
 }
 
 /* -----------------------------------------------------------------------------
@@ -1354,7 +1370,7 @@ a.mobile-show.search-bar-icon:hover {
 
 ----------------------------------------------------------------------------- */
 .hero-bg {
-  background-image: url(../img/hero-bg.jpg);
+  background-image: url(../img/jjoMaquinarias/materiales.png);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1370,7 +1386,7 @@ a.mobile-show.search-bar-icon:hover {
 }
 
 .hero-area {
-  height: 100%;
+  height: 38vh;
   position: relative;
   z-index: 1;
 }
@@ -1386,13 +1402,13 @@ html, body {
   width: 100%;
   height: 100%;
   content: "";
-  background-color: #07212e;
+  background-color: #182429;
   z-index: -1;
   opacity: 0.6;
 }
 
 .hero-text p.subtitle {
-  color: #F28123;
+  color: #ffde59;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 7px;
@@ -1445,12 +1461,12 @@ html, body {
   position: absolute;
   right: 30px;
   bottom: -15%;
-  height: 600px;
+  height: 60px;
 }
 
 input[type="submit"] {
-  background-color: #F28123;
-  color: #051922;
+  background-color: #ffde59;
+  color: #263e58;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 15px;
@@ -1509,7 +1525,7 @@ input[type="submit"] {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #051922;
+  background-color: #263e58;
   content: "";
   z-index: -1;
   opacity: 0.7;
@@ -1518,7 +1534,7 @@ input[type="submit"] {
 div.owl-controls, .owl-controls div {
   height: auto;
   top: 50%;
-  color: #F28123;
+  color: #ffde59;
   font-size: 48px;
 }
 
@@ -1568,12 +1584,12 @@ div.owl-controls, .owl-controls div {
   display: block;
   font-size: 24px;
   margin-right: 15px;
-  color: #F28123;
+  color: #ffde59;
   width: 65px;
   height: 65px;
   text-align: center;
   line-height: 60px;
-  border: 2px #F28123 dotted;
+  border: 2px #ffde59 dotted;
   border-radius: 999px;
 }
 
@@ -1623,13 +1639,13 @@ div.owl-controls, .owl-controls div {
 }
 
 .single-latest-news h3 a {
-  color: #051922;
+  color: #263e58;
 }
 
 p.blog-meta span {
   margin-right: 15px;
   opacity: 0.6;
-  color: #051922;
+  color: #263e58;
   font-size: 0.85em;
 }
 
@@ -1692,7 +1708,7 @@ p.excerpt {
 }
 
 .pagination-wrap ul li a.active {
-  background-color: #F28123;
+  background-color: #ffde59;
 }
 
 .single-artcile-bg {
@@ -1713,7 +1729,7 @@ p.excerpt {
 .single-article-text p {
   font-size: 15px;
   line-height: 1.6;
-  color: #051922;
+  color: #263e58;
 }
 
 .comments-list-wrap {
@@ -1766,7 +1782,7 @@ span.comment-date {
 }
 
 .comment-text-body h4 a {
-  color: #051922;
+  color: #263e58;
   font-size: 80%;
   margin-left: 10px;
   border-bottom: 1px solid #aaa;
@@ -1797,7 +1813,7 @@ span.comment-date {
   padding: 15px;
   border-radius: 5px;
   font-size: 15px;
-  color: #051922;
+  color: #263e58;
 }
 
 .comment-template form p input[type=email] {
@@ -1806,7 +1822,7 @@ span.comment-date {
   padding: 15px;
   border-radius: 5px;
   font-size: 15px;
-  color: #051922;
+  color: #263e58;
   margin-left: 10px;
 }
 
@@ -1814,7 +1830,7 @@ span.comment-date {
   border: 1px solid #ddd;
   padding: 15px;
   font-size: 15px;
-  color: #051922;
+  color: #263e58;
   border-radius: 5px;
   height: 250px;
   resize: none;
@@ -1915,11 +1931,11 @@ span.comment-date {
   margin-top: 8px;
   text-align: center;
   border-radius: 50%;
-  background-color: #F28123;
+  background-color: #ffde59;
 }
 
 .cart-banner .image-column .price-box .inner-price .price {
-  color: #051922;
+  color: #263e58;
   padding-top: 27px;
   position: relative;
   display: inline-block;
@@ -1928,7 +1944,7 @@ span.comment-date {
 }
 
 .cart-banner .image-column .price-box .inner-price .price strong {
-  color: #051922;
+  color: #263e58;
   font-size: 24px;
 }
 
@@ -1973,7 +1989,7 @@ span.comment-date {
   padding: 8px 20px 14px;
   text-transform: capitalize;
   text-align: center;
-  border: 2px solid #F28123;
+  border: 2px solid #ffde59;
 }
 
 .time-countdown .counter-column .count {
@@ -1982,7 +1998,7 @@ span.comment-date {
   font-size: 30px;
   line-height: 1.4em;
   padding: 0px 0px;
-  color: #F28123;
+  color: #ffde59;
   font-weight: 700;
   letter-spacing: 1px;
 }
@@ -2005,7 +2021,7 @@ span.comment-date {
   display: block;
   font-size: 70%;
   margin-top: 10px;
-  color: #051922;
+  color: #263e58;
   font-weight: 600;
   opacity: 0.5;
 }
@@ -2039,8 +2055,8 @@ p.testimonial-body {
 ----------------------------------------------------------------------------- */
 a.video-play-btn {
   position: absolute;
-  background-color: #F28123;
-  color: #051922;
+  background-color: #ffde59;
+  color: #263e58;
   width: 90px;
   height: 90px;
   text-align: center;
@@ -2078,7 +2094,7 @@ a.video-play-btn {
   width: 100%;
   height: 100%;
   content: "";
-  background-color: #051922;
+  background-color: #263e58;
   opacity: 0.3;
 }
 
@@ -2126,14 +2142,14 @@ a.video-play-btn {
   position: relative;
   font-size: 60px;
   font-weight: 700;
-  color: #F28123;
+  color: #ffde59;
 }
 
 .shop-banner .sale-percent span {
   position: relative;
   font-size: 24px;
   line-height: 1.1em;
-  color: #051922;
+  color: #263e58;
   font-weight: 400;
   text-align: center;
   margin-right: 10px;
@@ -2226,7 +2242,7 @@ ul.social-link-team li {
 
 ul.social-link-team li a {
   color: #fff;
-  background-color: #F28123;
+  background-color: #ffde59;
   width: 32px;
   height: 32px;
   line-height: 32px;
@@ -2291,7 +2307,7 @@ ul.social-link-team li a {
 .contact-form-box h4 i {
   position: absolute;
   left: -13%;
-  color: #F28123;
+  color: #ffde59;
   top: 2px;
 }
 
@@ -2314,7 +2330,7 @@ ul.social-link-team li a {
 
 .find-location p i {
   margin-right: 10px;
-  color: #F28123;
+  color: #ffde59;
 }
 
 #form_status span {
@@ -2381,7 +2397,7 @@ ul.social-link-team li a {
   font-weight: 700;
   font-size: 18px;
   margin: 15px;
-  border: 2px solid #051922;
+  border: 2px solid #263e58;
   color: #323232;
   cursor: pointer;
   padding: 8px 20px;
@@ -2389,8 +2405,8 @@ ul.social-link-team li a {
 }
 
 .product-filters ul li.active {
-  border: 2px solid #F28123;
-  background-color: #F28123;
+  border: 2px solid #ffde59;
+  background-color: #ffde59;
   color: #fff;
 }
 
@@ -2432,7 +2448,7 @@ p.product-price span {
 a.cart-btn {
   font-family: 'Poppins', sans-serif;
   display: inline-block;
-  background-color: #F28123;
+  background-color: #ffde59;
   color: #fff;
   padding: 10px 20px;
 }
@@ -2470,7 +2486,7 @@ p.single-product-pricing span {
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 10px;
-  color: #051922;
+  color: #263e58;
   line-height: inherit;
 }
 
@@ -2504,7 +2520,7 @@ ul.product-share li {
 
 ul.product-share li a {
   display: block;
-  color: #051922;
+  color: #263e58;
   margin-right: 10px;
 }
 
@@ -2546,7 +2562,7 @@ td.product-image img {
 .cart-table-wrap tbody tr td {
   border: 1px solid #efefef;
   padding: 20px 0;
-  color: #051922;
+  color: #263e58;
 }
 
 thead.cart-table-head tr {
@@ -2558,7 +2574,7 @@ td.product-quantity input {
 }
 
 td.product-remove a {
-  color: #051922;
+  color: #263e58;
 }
 
 .total-section table.total-table {
@@ -2604,7 +2620,7 @@ tr.total-data td strong {
 
 .coupon-form-wrap form p input[type=text] {
   border: 1px solid #ddd;
-  color: #051922;
+  color: #263e58;
   padding: 15px;
   width: 100%;
   border-radius: 5px;
@@ -2627,7 +2643,7 @@ tr.total-data td strong {
 }
 
 .card.single-accordion .card-header h5 button {
-  color: #051922;
+  color: #263e58;
   font-size: 15px;
   display: block;
   width: 100%;
@@ -2678,7 +2694,7 @@ tr.total-data td strong {
   font-weight: 900;
   line-height: 22px;
   margin-top: -11px;
-  color: #F28123;
+  color: #ffde59;
 }
 
 .billing-address-form form p:last-child {
