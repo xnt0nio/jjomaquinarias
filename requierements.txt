@@ -12,3 +12,4 @@ reportlab
 googletrans==4.0.0-rc1
 stripe
 pytest pytest-django
+crispy-bootstrap4

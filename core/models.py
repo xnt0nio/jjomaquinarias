@@ -18,7 +18,7 @@ class Producto(models.Model):
     tipo = models.ForeignKey(TipoProducto, on_delete=models.CASCADE)
     imagen = models.ImageField(null=True, blank=True)
     vigente = models.BooleanField()
-    #titulo 1
+   
     marca = models.CharField(max_length=50, null=True, blank=True)
     modelo = models.CharField(max_length=50, null=True, blank=True)
     motor = models.CharField(max_length=100, null=True, blank=True)
@@ -27,7 +27,7 @@ class Producto(models.Model):
     aire_acondicionado = models.BooleanField(null=True, blank=True)
     alimentacion = models.CharField(max_length=20, null=True, blank=True)
     neumaticos = models.CharField(max_length=20, null=True, blank=True)
-    # titulo 2
+   
     caracteristica_1_titulo = models.CharField(max_length=100, null=True, blank=True)
     caracteristica_1_descripcion = models.TextField(null=True, blank=True)
     caracteristica_2_titulo = models.CharField(max_length=100, null=True, blank=True)
