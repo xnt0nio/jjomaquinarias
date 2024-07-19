@@ -36,3 +36,6 @@ def productos(request):
       
     }
     return render(request, 'core/productos.html',data)
+
+
+
