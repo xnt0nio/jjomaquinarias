@@ -24,18 +24,29 @@ def add(request):
 
 
 
+def producto(request, id):
+    producto = Producto.objects.get(id=id)
+    data = {
+        'producto': producto,
+    }
+    return render(request, 'core/producto.html', data)
+
+
+
 def productos(request):
    
     productosAll = Producto.objects.all()
-
-   
-
-
     data = {
         'listado': productosAll,
-      
     }
     return render(request, 'core/productos.html',data)
+
+
+
+
+
+def contacto(request):
+    return render(request, 'core/contacto.html')
 
 
 

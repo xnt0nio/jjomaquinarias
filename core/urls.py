@@ -9,6 +9,8 @@ router = routers.DefaultRouter()
 urlpatterns = [
     path('', index, name="index"),
     path('add/', add, name="add"),
+    path('producto/<int:id>/', producto, name="producto"),
     path('productos', productos, name="productos"),
+    path('contacto', contacto, name="contacto"),
 
 ]
