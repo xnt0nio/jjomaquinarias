@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .forms import *
 from .models import *
+from django.core.paginator import Paginator
+
 
 
 def index(request):
@@ -25,7 +27,7 @@ def add(request):
 
 
 def producto(request, id):
-    producto = Producto.objects.get(id=id)
+    producto = get_object_or_404(Producto, id=id)
     data = {
         'producto': producto,
     }
@@ -33,15 +35,20 @@ def producto(request, id):
 
 
 
+
 def productos(request):
-   
-    productosAll = Producto.objects.all()
+    productos_list = Producto.objects.all()
+    paginator = Paginator(productos_list, 9)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    
+    tipos = TipoProducto.objects.all() 
+
     data = {
-        'listado': productosAll,
+        'listado': page_obj,
+        'tipos': tipos,
     }
-    return render(request, 'core/productos.html',data)
-
-
+    return render(request, 'core/productos.html', data)
 
 
 

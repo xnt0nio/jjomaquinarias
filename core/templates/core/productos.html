@@ -1,215 +1,200 @@
 {% extends 'core/base.html' %}
 {% load static %}
 {% block css %}
+<style>
+	.product-lists {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 30px;
+	}
+
+	.single-product-item {
+		width: calc(33.333% - 30px);
+		box-sizing: border-box;
+		max-height: 390px;
+	}
+
+	.product-content {
+		text-align: center;
+		/* Centra el texto y el botón dentro de este contenedor */
+		padding: 20px;
+		/* Espaciado interno del contenedor */
+	}
+
+	@media (max-width: 992px) {
+		.single-product-item {
+			width: calc(50% - 30px);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.single-product-item {
+			width: 100%;
+		}
+	}
+</style>
 {% endblock %}
 {% block contenido %}
 
+<!-- PreLoader -->
+<div class="loader">
+	<div class="loader-inner">
+		<div class="circle"></div>
+	</div>
+</div>
+<!-- PreLoader Ends -->
 
+<!-- search area -->
+<div class="search-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<span class="close-btn"><i class="fas fa-window-close"></i></span>
+				<div class="search-bar">
+					<div class="search-bar-tablecell">
+						<h3>Search For:</h3>
+						<input type="text" placeholder="Keywords">
+						<button type="submit">Search <i class="fas fa-search"></i></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end search area -->
 
-
-
-
-
-
-	<!--PreLoader-->
-    <div class="loader">
-        <div class="loader-inner">
-            <div class="circle"></div>
-        </div>
-    </div>
-    <!--PreLoader Ends-->
-
-
-	<!-- search area -->
-	<div class="search-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<span class="close-btn"><i class="fas fa-window-close"></i></span>
-					<div class="search-bar">
-						<div class="search-bar-tablecell">
-							<h3>Search For:</h3>
-							<input type="text" placeholder="Keywords">
-							<button type="submit">Search <i class="fas fa-search"></i></button>
+<!-- breadcrumb-section -->
+<div class="hero-area hero-bg">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-9 offset-lg-2 text-center">
+				<div class="hero-text">
+					<div class="hero-text-tablecell">
+						<p class="subtitle">Conoce todas nuestras Maquinarias</p>
+						<h1>Nuestros servicios</h1>
+						<div class="hero-btns">
+					
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- end search arewa -->
-	
-	<!-- breadcrumb-section -->
-	<div class="breadcrumb-section breadcrumb-bg">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="breadcrumb-text">
-						<p>Fresh and Organic</p>
-						<h1>Shop</h1>
-					</div>
+</div>
+<!-- end breadcrumb section -->
+
+<!-- products -->
+<div class="product-section mt-150 mb-150">
+	<div class="container">
+		<!-- Filtros de productos -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="product-filters">
+					<ul>
+						<li class="active" data-filter="*">Todos</li>
+						{% for tipo in tipos %}
+						<li data-filter=".{{ tipo.descripcion|slugify }}">{{ tipo.descripcion }}</li>
+						{% endfor %}
+					</ul>
 				</div>
 			</div>
 		</div>
-	</div>
-	<!-- end breadcrumb section -->
 
-	<!-- products -->
-	<div class="product-section mt-150 mb-150">
-		<div class="container">
-
-			<div class="row">
-                <div class="col-md-12">
-                    <div class="product-filters">
-                        <ul>
-                            <li class="active" data-filter="*">All</li>
-                            <li data-filter=".strawberry">Strawberry</li>
-                            <li data-filter=".berry">Berry</li>
-                            <li data-filter=".lemon">Lemon</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+		<div class="product-lists">
 			{% for producto in listado %}
-			{% if forloop.counter0|divisibleby:3 %}
-				<div class="row product-lists">
-			{% endif %}
-			
-			<div class="col-lg-4 col-md-6 text-center strawberry">
-				<div class="single-product-item">
-					<div class="product-image">
-						<a href="{% url 'producto' producto.id %}"><img src="{{ producto.imagen.url }}" alt=""></a>
-					</div>
+			<div class="single-product-item {{ producto.tipo.descripcion|slugify }}">
+				<div class="product-image">
+					<a href="{% url 'producto' producto.id %}"><img src="{{ producto.imagen.url }}" alt=""></a>
+				</div>
+				<div class="product-content">
 					<h3>{{ producto.nombre }}</h3>
-					<a href="{% url 'producto' producto.id %}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Ver</a>
+					<a href="{% url 'producto' producto.id %}" class="cart-btn"><i class="fas fa-shopping-cart"></i>
+						Ver</a>
 				</div>
 			</div>
-			
-			{% if forloop.counter|divisibleby:3 or forloop.last %}
-				</div>
-			{% endif %}
-		{% endfor %}
+			{% endfor %}
+		</div>
+
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<div class="pagination-wrap">
+					<ul>
+						{% if listado.has_previous %}
+							<li><a href="?page={{ listado.previous_page_number }}">Anterior</a></li>
+						{% else %}
+							<li class="disabled"><a href="#">Anterior</a></li>
+						{% endif %}
 		
+						{% for num in listado.paginator.page_range %}
+							{% if listado.number == num %}
+								<li><a class="active" href="#">{{ num }}</a></li>
+							{% else %}
+								<li><a href="?page={{ num }}">{{ num }}</a></li>
+							{% endif %}
+						{% endfor %}
+		
+						{% if listado.has_next %}
+							<li><a href="?page={{ listado.next_page_number }}">Siguiente</a></li>
+						{% else %}
+							<li class="disabled"><a href="#">Siguiente</a></li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- end products -->
 
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<div class="pagination-wrap">
-						<ul>
-							<li><a href="#">Prev</a></li>
-							<li><a href="#">1</a></li>
-							<li><a class="active" href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">Next</a></li>
-						</ul>
+<!-- logo carousel -->
+<div class="logo-carousel-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="logo-carousel-inner">
+					<div class="single-logo-item">
+						<img src="assets/img/company-logos/1.png" alt="">
+					</div>
+					<div class="single-logo-item">
+						<img src="assets/img/company-logos/2.png" alt="">
+					</div>
+					<div class="single-logo-item">
+						<img src="assets/img/company-logos/3.png" alt="">
+					</div>
+					<div class="single-logo-item">
+						<img src="assets/img/company-logos/4.png" alt="">
+					</div>
+					<div class="single-logo-item">
+						<img src="assets/img/company-logos/5.png" alt="">
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- end products -->
+</div>
+<!-- end logo carousel -->
 
-	<!-- logo carousel -->
-	<div class="logo-carousel-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="logo-carousel-inner">
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/1.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/2.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/3.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/4.png" alt="">
-						</div>
-						<div class="single-logo-item">
-							<img src="assets/img/company-logos/5.png" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end logo carousel -->
-
-	<!-- footer -->
-	<div class="footer-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box about-widget">
-						<h2 class="widget-title">About us</h2>
-						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box get-in-touch">
-						<h2 class="widget-title">Get in Touch</h2>
-						<ul>
-							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
-							<li>support@fruitkha.com</li>
-							<li>+00 111 222 3333</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box pages">
-						<h2 class="widget-title">Pages</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="services.html">Shop</a></li>
-							<li><a href="news.html">News</a></li>
-							<li><a href="contact.html">Contact</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="footer-box subscribe">
-						<h2 class="widget-title">Subscribe</h2>
-						<p>Subscribe to our mailing list to get the latest updates.</p>
-						<form action="index.html">
-							<input type="email" placeholder="Email">
-							<button type="submit"><i class="fas fa-paper-plane"></i></button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end footer -->
-	
-	<!-- copyright -->
-	<div class="copyright">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-12">
-					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>,  All Rights Reserved.</p>
-				</div>
-				<div class="col-lg-6 text-right col-md-12">
-					<div class="social-icons">
-						<ul>
-							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-
-	
- 
 {% endblock %}
 {% block js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+<script>
+	$(document).ready(function () {
+		// Inicializar Isotope
+		var $grid = $('.product-lists').isotope({
+			itemSelector: '.single-product-item',
+			layoutMode: 'fitRows'
+		});
 
+		// Filtrar items al hacer click en un filtro
+		$('.product-filters').on('click', 'li', function () {
+			var filterValue = $(this).attr('data-filter');
+			$grid.isotope({ filter: filterValue });
+
+			// Cambiar la clase 'active' en el filtro seleccionado
+			$('.product-filters li').removeClass('active');
+			$(this).addClass('active');
+		});
+	});
+</script>
 {% endblock %}
