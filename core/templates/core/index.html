@@ -3,9 +3,7 @@
 {% block css %}
 <style>
   
-    .list-section {
-        margin-bottom: 40px;
-    }
+
     .cart-banner {
         margin-bottom: 40px;
     }
@@ -97,43 +95,20 @@
             <!-- Image Column -->
             <div class="image-column col-lg-6">
                 <div class="image">
-                    <div class="price-box">
-                        <div class="inner-price">
-                            <span class="price">
-                                <strong>30%</strong> <br> de descuento en maquinaria seleccionada
-                            </span>
-                        </div>
-                    </div>
-                    <img src="assets/img/a.jpg" alt="">
+                    <img src="{% static 'core/img/jjoMaquinarias/maquina2.jpg' %}" alt="Maquinaria en alquiler">
                 </div>
             </div>
             <!-- Content Column -->
             <div class="content-column col-lg-6">
-                <h3><span class="orange-text">Oferta</span> del mes</h3>
+                <h3><span class="orange-text">Alquiler</span> de Maquinaria</h3>
                 <h4>Retroexcavadora 320D</h4>
-                <div class="text">La mejor retroexcavadora para tus proyectos de construcción. Alquila ahora y obtén un descuento especial. Esta oferta es válida por tiempo limitado.</div>
-                <!-- Countdown Timer -->
-                <div class="time-counter">
-                    <div class="time-countdown clearfix" data-countdown="2020/2/01">
-                        <div class="counter-column">
-                            <div class="inner"><span class="count">00</span>Días</div>
-                        </div>
-                        <div class="counter-column">
-                            <div class="inner"><span class="count">00</span>Horas</div>
-                        </div>
-                        <div class="counter-column">
-                            <div class="inner"><span class="count">00</span>Minutos</div>
-                        </div>
-                        <div class="counter-column">
-                            <div class="inner"><span class="count">00</span>Segundos</div>
-                        </div>
-                    </div>
-                </div>
-                <a href="cart.html" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Añadir al carrito</a>
+                <div class="text">Ofrecemos una amplia gama de maquinaria de construcción para tus proyectos. Alquila ahora y asegura la disponibilidad de equipos de alta calidad para tus necesidades.</div>
+                <a href="cart.html" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Ver Maquinaria</a>
             </div>
         </div>
     </div>
 </section>
+
 <!-- end cart banner section -->
 
 <!-- advertisement section -->
@@ -196,6 +171,9 @@
         </div>
     </div>
 </div>
+
+
+
 
 {% endblock %}
 
