@@ -57,8 +57,8 @@ def contacto(request):
 
 
 
-def HistorialEmpresa(request):
-    return render(request, 'core/HistorialEmpresa.html')
+def sobreNosotros(request):
+    return render(request, 'core/sobreNosotros.html')
 
 def vision(request):
     return render(request, 'core/vision.html')

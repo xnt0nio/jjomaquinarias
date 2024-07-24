@@ -2,8 +2,6 @@
 {% load static %}
 {% block css %}
 <style>
-  
-
     .cart-banner {
         margin-bottom: 40px;
     }
@@ -13,7 +11,6 @@
     .shop-banner {
         margin-bottom: 40px;
     }
- 
 </style>
 {% endblock %}
 {% block contenido %}
@@ -36,8 +33,8 @@
                         <p class="subtitle">¡Confía en JJO para tu próximo proyecto!</p>
                         <h1>JJO Maquinarias</h1>
                         <div class="hero-btns">
-                            <a href="shop.html" class="boxed-btn">Explora Maquinarias</a>
-                            <a href="contact.html" class="bordered-btn">Contáctanos</a>
+                            <a href="{% url 'productos' %}" class="boxed-btn">Explora Maquinarias</a>
+                            <a href="{% url 'contacto' %}" class="bordered-btn">Contáctanos</a>
                         </div>
                     </div>
                 </div>
@@ -54,33 +51,33 @@
             <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                 <div class="list-box d-flex align-items-center">
                     <div class="list-icon">
-                        <i class="fas fa-truck-loading"></i>
+                        <i class="fas fa-hard-hat"></i>
                     </div>
                     <div class="content">
-                        <h3>Entrega Rápida</h3>
-                        <p>Para todos tus proyectos</p>
+                        <h3>Equipo Confiable</h3>
+                        <p>Máquinas listas para cualquier trabajo</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
                 <div class="list-box d-flex align-items-center">
                     <div class="list-icon">
-                        <i class="fas fa-headset"></i>
+                        <i class="fas fa-road"></i>
                     </div>
                     <div class="content">
-                        <h3>Soporte 24/7</h3>
-                        <p>Asistencia todo el día</p>
+                        <h3>Servicio Integral</h3>
+                        <p>Desde el arriendo hasta el traslado</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="list-box d-flex justify-content-start align-items-center">
                     <div class="list-icon">
-                        <i class="fas fa-undo"></i>
+                        <i class="fas fa-thumbs-up"></i>
                     </div>
                     <div class="content">
-                        <h3>Flexibilidad</h3>
-                        <p>Devoluciones fáciles</p>
+                        <h3>Calidad Garantizada</h3>
+                        <p>Equipos de alto rendimiento</p>
                     </div>
                 </div>
             </div>
@@ -100,10 +97,10 @@
             </div>
             <!-- Content Column -->
             <div class="content-column col-lg-6">
-                <h3><span class="orange-text">Alquiler</span> de Maquinaria</h3>
-                <h4>Retroexcavadora 320D</h4>
-                <div class="text">Ofrecemos una amplia gama de maquinaria de construcción para tus proyectos. Alquila ahora y asegura la disponibilidad de equipos de alta calidad para tus necesidades.</div>
-                <a href="cart.html" class="cart-btn mt-3"><i class="fas fa-shopping-cart"></i> Ver Maquinaria</a>
+                <h3><span class="orange-text">Arriendo</span> de Maquinarias</h3>
+             
+                <div class="text">Ofrecemos una amplia gama de maquinaria de construcción para tus proyectos. Cotiza ahora y asegura la disponibilidad de equipos de alta calidad para tus necesidades.</div>
+                <a href="{% url 'productos' %}" class="cart-btn mt-3"><i class="fas fa-eye"></i> Ver Maquinarias</a>
             </div>
         </div>
     </div>
@@ -117,16 +114,16 @@
         <div class="row">
             <div class="col-lg-6 col-md-12">
 				<div class="image">
-                    <img src="{% static 'core/img/jjoMaquinarias/Logo.png' %}" alt="Retroexcavadora 320D">
+                    <img src="{% static 'core/img/jjoMaquinarias/logo.jpg' %}" alt="Retroexcavadora 320D">
                 </div>
             </div>
             <div class="col-lg-6 col-md-12">
                 <div class="abt-text">
-                    <p class="top-sub">Desde el Año 1999</p>
+                    <p class="top-sub">Desde el Año 2019</p>
                     <h2>Somos <span class="orange-text">JJO Maquinarias</span></h2>
-                    <p>Ofrecemos el mejor equipo de construcción para alquiler. Con más de 20 años de experiencia, somos tu socio confiable para cualquier proyecto.</p>
-                    <p>Contamos con una amplia gama de maquinarias, desde excavadoras hasta camiones de carga. Todos nuestros equipos están en excelente estado y listos para trabajar.</p>
-                    <a href="about.html" class="boxed-btn mt-4">Saber más</a>
+                    <p>Fundada por Óscar Ortega y Jorge Pérez en Valparaíso, JJO Maquinarias se especializa en el arriendo de maquinaria pesada para satisfacer las necesidades de la industria y la construcción.</p>
+                    <p>Contamos con una flota diversa y equipos de alta calidad para asegurar el éxito de tus proyectos, respaldados por años de experiencia y un compromiso con la excelencia.</p>
+                    <a href="{% url 'sobreNosotros' %}" class="boxed-btn mt-4">Saber más</a>
                 </div>
             </div>
         </div>
@@ -138,40 +135,10 @@
 <section class="shop-banner">
     <div class="container">
         <h3>Encuentra la maquinaria que necesitas <br> con <span class="orange-text">JJO Maquinarias</span></h3>
-        <div class="sale-percent"><span>¡Alquila ahora!</span> <span>Máquinas para cada necesidad</span></div>
-        <a href="shop.html" class="cart-btn btn-lg">Ver Maquinarias</a>
+        <div class="sale-percent"><span>Cotiza ahora!</span><span>Máquinas para cada necesidad</span></div>      
     </div>
 </section>
-
 <!-- end shop banner -->
-
-<!-- logo carousel -->
-<div class="logo-carousel-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="logo-carousel-inner">
-                    <div class="single-logo-item">
-                        <img src="assets/img/company-logos/1.png" alt="">
-                    </div>
-                    <div class="single-logo-item">
-                        <img src="assets/img/company-logos/2.png" alt="">
-                    </div>
-                    <div class="single-logo-item">
-                        <img src="assets/img/company-logos/3.png" alt="">
-                    </div>
-                    <div class="single-logo-item">
-                        <img src="assets/img/company-logos/4.png" alt="">
-                    </div>
-                    <div class="single-logo-item">
-                        <img src="assets/img/company-logos/5.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 
 

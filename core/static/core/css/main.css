@@ -1676,10 +1676,7 @@ p.excerpt {
   margin-bottom: 30px;
 }
 
-.single-artcile-bg {
-  background-image: url(../img/jjoMaquinarias/maquina4.jpg);
-  height: 450px;
-}
+
 
 .pagination-wrap {
   margin-top: 40px;
@@ -1711,12 +1708,27 @@ p.excerpt {
   background-color: #ffde59;
 }
 
+.single-article-section {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px; /* Espacio entre el texto y la imagen */
+}
+
+.single-article-text {
+  flex: 1;
+  padding-right: 20px; /* Espacio entre el texto y la imagen */
+}
+
 .single-artcile-bg {
+  background-image: url('{% static "core/img/jjoMaquinarias/logo.jpg" %}');
   background-size: cover;
   background-position: center;
-  background-color: #ddd;
+  height: 400px;
+  width: 400px;
   border-radius: 5px;
   margin-bottom: 20px;
+  flex: 0 0 auto; /* Asegura que la imagen tenga tamaño fijo y no se estire */
 }
 
 .single-article-text h2 {

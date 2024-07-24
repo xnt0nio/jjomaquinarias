@@ -12,7 +12,7 @@ urlpatterns = [
     path('producto/<int:id>/', producto, name="producto"),
     path('productos', productos, name="productos"),
     path('contacto', contacto, name="contacto"),
-    path('HistorialEmpresa', HistorialEmpresa, name="HistorialEmpresa"),
+    path('sobreNosotros', sobreNosotros, name="sobreNosotros"),
     path('vision', vision, name="vision"),
     path('mision', mision, name="mision"),
 
