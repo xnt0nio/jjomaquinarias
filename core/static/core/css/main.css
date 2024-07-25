@@ -673,10 +673,19 @@ nav.mean-nav > ul > li:first-child > a {
   border-top: none;
 }
 
+.header-icons {
+  display: flex; /* Utiliza flexbox para el contenedor de los íconos */
+  justify-content: flex-start; /* Alinea los íconos a la izquierda */
+  flex-wrap: wrap; /* Permite que los íconos se envuelvan si es necesario */
+  padding: 0; /* Elimina cualquier relleno del contenedor */
+  margin: 0; /* Elimina cualquier margen del contenedor */
+}
+
 .header-icons a {
-  color: #fff;
-  display: inline-block;
-  padding: 10px;
+  color: #fff; /* Color de los íconos */
+  display: inline-block; /* Asegura que los íconos se comporten como bloques en línea */
+  padding: 10px; /* Espacio interno alrededor de los íconos */
+  margin-right: 10px; /* Espacio entre los íconos */
 }
 
 .site-logo {
@@ -2138,11 +2147,33 @@ a.video-play-btn {
 .shop-banner {
   position: relative;
   background-color: #f5f5f5;
-  background-image: url(../img/jjoMaquinarias/maquina8.png);
-  background-size: cover;
-  padding: 110px 0px 200px;
+  background-image: url(../img/jjoMaquinarias/banner.jpeg);
+  background-size: cover; /* Hace que la imagen cubra todo el contenedor */
+  background-repeat: no-repeat;
+  background-position: center; /* Centra la imagen en el contenedor */
+  padding: 100px 0px 200px; /* Ajusta el padding para diferentes tamaños de pantalla */
+  min-height: 60vh; /* Asegura que el contenedor tenga una altura mínima */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .shop-banner {
+    padding: 50px 0px; /* Reduce el padding para pantallas más pequeñas */
+    min-height: 40vh; /* Altura mínima de 40% del viewport */
+  }
+}
+
+/* Ajustes para pantallas medianas */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .shop-banner {
+    padding: 75px 0px; /* Ajusta el padding para pantallas medianas */
+    min-height: 50vh; /* Altura mínima de 50% del viewport */
+  }
+}
 .shop-banner h3 {
   position: relative;
   font-size: 50px;

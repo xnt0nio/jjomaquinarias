@@ -5,11 +5,20 @@
     .cart-banner {
         margin-bottom: 40px;
     }
+
     .abt-section {
         margin-bottom: 40px;
     }
-    .shop-banner {
-        margin-bottom: 40px;
+
+ 
+
+    .image-column .image img {
+        width: 100%;
+      
+        height: auto;
+
+        max-width: none;
+        
     }
 </style>
 {% endblock %}
@@ -92,14 +101,15 @@
             <!-- Image Column -->
             <div class="image-column col-lg-6">
                 <div class="image">
-                    <img src="{% static 'core/img/jjoMaquinarias/maquina6.jpg' %}" alt="Maquinaria en alquiler">
+                    <img src="{% static 'core/img/jjoMaquinarias/maquina6.png' %}" alt="Maquinaria en alquiler">
                 </div>
             </div>
             <!-- Content Column -->
             <div class="content-column col-lg-6">
                 <h3><span class="orange-text">Arriendo</span> de Maquinarias</h3>
-             
-                <div class="text">Ofrecemos una amplia gama de maquinaria de construcción para tus proyectos. Cotiza ahora y asegura la disponibilidad de equipos de alta calidad para tus necesidades.</div>
+
+                <div class="text">Ofrecemos una amplia gama de maquinaria de construcción para tus proyectos. Cotiza
+                    ahora y asegura la disponibilidad de equipos de alta calidad para tus necesidades.</div>
                 <a href="{% url 'productos' %}" class="cart-btn mt-3"><i class="fas fa-eye"></i> Ver Maquinarias</a>
             </div>
         </div>
@@ -113,7 +123,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-12">
-				<div class="image">
+                <div class="image">
                     <img src="{% static 'core/img/jjoMaquinarias/logo.jpg' %}" alt="Retroexcavadora 320D">
                 </div>
             </div>
@@ -121,8 +131,11 @@
                 <div class="abt-text">
                     <p class="top-sub">Desde el Año 2019</p>
                     <h2>Somos <span class="orange-text">JJO Maquinarias</span></h2>
-                    <p>Fundada por Óscar Ortega y Jorge Pérez en Valparaíso, JJO Maquinarias se especializa en el arriendo de maquinaria pesada para satisfacer las necesidades de la industria y la construcción.</p>
-                    <p>Contamos con una flota diversa y equipos de alta calidad para asegurar el éxito de tus proyectos, respaldados por años de experiencia y un compromiso con la excelencia.</p>
+                    <p>Fundada por Óscar Ortega y Jorge Pérez en Valparaíso, JJO Maquinarias se especializa en el
+                        arriendo de maquinaria pesada para satisfacer las necesidades de la industria y la construcción.
+                    </p>
+                    <p>Contamos con una flota diversa y equipos de alta calidad para asegurar el éxito de tus proyectos,
+                        respaldados por años de experiencia y un compromiso con la excelencia.</p>
                     <a href="{% url 'sobreNosotros' %}" class="boxed-btn mt-4">Saber más</a>
                 </div>
             </div>
@@ -135,7 +148,7 @@
 <section class="shop-banner">
     <div class="container">
         <h3>Encuentra la maquinaria que necesitas <br> con <span class="orange-text">JJO Maquinarias</span></h3>
-        <div class="sale-percent"><span>Cotiza ahora!</span><span>Máquinas para cada necesidad</span></div>      
+        <div class="sale-percent"><span>Cotiza ahora!</span><span>Máquinas para cada necesidad</span></div>
     </div>
 </section>
 <!-- end shop banner -->

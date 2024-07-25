@@ -140,27 +140,33 @@
                         <hr class="mb-4"
                         style="background-color: #bcc2b4; opacity: 1;">
                         
+
+
+
                         <!-- Título 2 -->
                         <div class="form-group">
                             <h3 class="custom-title">Caracteristicas</h3>
-                            <label for="{{ form.marca.id_for_label }}">{{ form.marca.label }}</label>
-                            {{ form.marca }}
+                            <label for="{{ form.caracteristica.id_for_label }}">{{ form.caracteristica.label }}</label>
+                            {{ form.caracteristica  }}
                         </div>
-                        
+
+                        <hr class="mb-4"
+                        style="background-color: #bcc2b4; opacity: 1;">
+
+
                         <div class="form-group">
-                            <label for="{{ form.caracteristica_1_descripcion.id_for_label }}">{{ form.caracteristica_1_descripcion.label }}</label>
-                            {{ form.caracteristica_1_descripcion }}
+                            <h3 class="custom-title">Equipamiento</h3>
+                            <label for="{{ form.equipamiento.id_for_label }}">{{ form.equipamiento.label }}</label>
+                            {{ form.equipamiento  }}
                         </div>
+
+
+
+                     
                         
-                        <div class="form-group">
-                            <label for="{{ form.caracteristica_2_titulo.id_for_label }}">{{ form.caracteristica_2_titulo.label }}</label>
-                            {{ form.caracteristica_2_titulo }}
-                        </div>
                         
-                        <div class="form-group">
-                            <label for="{{ form.caracteristica_2_descripcion.id_for_label }}">{{ form.caracteristica_2_descripcion.label }}</label>
-                            {{ form.caracteristica_2_descripcion }}
-                        </div>
+                   
+                        
                         
                         <!-- Botón de guardar -->
                         <button type="submit" class="btn btn-success">Guardar</button>

@@ -7,6 +7,52 @@
     object-fit: cover; /* Corta la imagen para llenar el contenedor manteniendo la proporción */
 }
 
+
+.more-products .product-lists {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.more-products .single-product-item {
+    width: calc(33.333% - 30px);
+    box-sizing: border-box;
+    max-height: 390px;
+}
+
+.more-products .product-content {
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 992px) {
+    .more-products .single-product-item {
+        width: calc(50% - 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .more-products .single-product-item {
+        width: 100%;
+    }
+}
+
+.more-products .product-image img {
+    height: 200px;
+    width: auto;
+    object-fit: cover;
+}
+
+
+
+.more-products {
+    margin-bottom: 40px; /* Ajusta este valor para aumentar o disminuir el espacio debajo de la sección */
+}
+
+.container {
+    margin-bottom: 40px; /* Ajusta este valor si la sección está dentro de un contenedor con márgenes */
+}
+
 </style>
 {% block css %}
 {% endblock %}
@@ -139,21 +185,7 @@
                                                 </div>
                                                 {% endif %}
 
-                                                {% if producto.aire_acondicionado %}
-                                                <div class="col-lg-4 col-md-6 mb-4 mb-lg-5">
-                                                    <div
-                                                        class="list-box d-flex justify-content-start align-items-center">
-                                                        <div class="list-icon">
-                                                            <i class="fas fa-wind"></i>
-                                                            <!-- Icono para "Aire Acondicionado" -->
-                                                        </div>
-                                                        <div class="content">
-                                                            <h3>Aire Acondicionado</h3>
-                                                            <p>{{ producto.aire_acondicionado }}</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                {% endif %}
+                                     
 
                                                 {% if producto.alimentacion %}
                                                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-5">
@@ -203,7 +235,7 @@
                                     data-parent="#accordionExample">
                                     <div class="card-body">
                                         <div class="shipping-address-form">
-                                            <p>{{ producto.caracteristica_1_descripcion }}</p>
+                                            <p>{{ producto.caracteristica  }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -222,7 +254,7 @@
                                     data-parent="#accordionExample">
                                     <div class="card-body">
                                         <div class="card-details">
-                                            <p>{{ producto.caracteristica_2_descripcion }}</p>
+                                            <p>{{ producto.equipamiento }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -236,7 +268,7 @@
     </div>
 </div>
 
-<div class="more-products mb-150">
+<div class="more-products mb-150 spacing-bottom">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
@@ -245,27 +277,26 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="product-lists" style="display: flex; flex-wrap: wrap; gap: 30px;">
             {% for similar in productos_similares %}
-            <div class="col-lg-3 col-md-6 text-center">
-                <div class="single-product-item">
-                    <div class="product-image">
-                        <a href="{% url 'producto' similar.id %}">
-                            <img src="{{ similar.imagen.url }}" alt="{{ similar.nombre }}">
-                        </a>
-                    </div>
-                    <div class="product-content">
-                        <h3>{{ similar.nombre }}</h3>
-                        <a href="{% url 'producto' similar.id %}" class="cart-btn">
-                            <i class="fas fa-eye"></i> Ver
-                        </a>
-                    </div>
+            <div class="single-product-item" style="width: calc(33.333% - 30px); box-sizing: border-box; max-height: 390px; margin: 4 15px;">
+                <div class="product-image">
+                    <a href="{% url 'producto' similar.id %}">
+                        <img src="{{ similar.imagen.url }}" alt="{{ similar.nombre }}" style="height: 200px; width: auto; object-fit: cover;">
+                    </a>
+                </div>
+                <div class="product-content" style="text-align: center; padding: 20px;">
+                    <h3>{{ similar.nombre }}</h3>
+                    <a href="{% url 'producto' similar.id %}" class="cart-btn">
+                        <i class="fas fa-eye"></i> Ver
+                    </a>
                 </div>
             </div>
             {% endfor %}
         </div>
     </div>
 </div>
+
 
 
 
