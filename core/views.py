@@ -28,8 +28,10 @@ def add(request):
 
 def producto(request, id):
     producto = get_object_or_404(Producto, id=id)
+    productos_similares = Producto.objects.filter(tipo=producto.tipo).exclude(id=producto.id)[:4]  # Obtiene hasta 4 productos similares
     data = {
         'producto': producto,
+        'productos_similares': productos_similares,
     }
     return render(request, 'core/producto.html', data)
 
