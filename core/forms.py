@@ -47,7 +47,6 @@ class MensajeForm(forms.ModelForm):
             'nombre': forms.TextInput(attrs={'placeholder': 'Nombre'}),
             'email': forms.EmailInput(attrs={'placeholder': 'Correo electrónico'}),
             'telefono': forms.TextInput(attrs={'placeholder': 'Teléfono'}),
-            'asunto': forms.TextInput(attrs={'placeholder': 'Asunto'}),
+            'asunto': forms.TextInput(attrs={'placeholder': 'Asunto', 'class': 'asunto-field'}),
             'mensaje': forms.Textarea(attrs={'placeholder': 'Mensaje'}),
         }
-    

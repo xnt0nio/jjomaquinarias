@@ -1,47 +1,54 @@
 {% extends 'core/base.html' %}
 {% load static %}
-<style>/* Estilos generales para todos los campos */
+<style>
+.contact-form form p input[type=text],
+.contact-form form p input[type=tel],
+.contact-form form p input[type=email] {
+    width: 49%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.contact-form form p textarea {
+    border: 1px solid #ddd;
+    padding: 15px;
+    height: 200px;
+    border-radius: 3px;
+    width: 100%;
+    resize: none;
+    box-sizing: border-box;
+}
+
+/* Estilos específicos para el campo 'asunto' */
+.asunto-field {
+    width: calc(100% - 32px); /* Ajusta el ancho para que tenga espacio suficiente */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
     .contact-form form p input[type=text],
     .contact-form form p input[type=tel],
-    .contact-form form p input[type=email] {
-        width: 49%;
-        padding: 15px;
-        border: 1px solid #ddd;
-        border-radius: 3px;
-        display: inline-block;
-        box-sizing: border-box;
-    }
-    
+    .contact-form form p input[type=email],
+    .contact-form form p .asunto-field,
     .contact-form form p textarea {
-        border: 1px solid #ddd;
-        padding: 15px;
-        height: 200px;
-        border-radius: 3px;
-        width: 100%;
-        resize: none;
-        box-sizing: border-box;
+        width: 100%; /* Hace que los campos ocupen todo el ancho */
+        margin-bottom: 15px; /* Espacio entre los campos */
     }
-    
-    /* Estilos específicos para el campo 'asunto' */
-    .asunto-field {
-        width: calc(100% - 32px); /* Ajusta el ancho para que tenga espacio suficiente */
+
+    .contact-form form p {
+        text-align: left; /* Alinea los campos a la izquierda */
     }
-    
-    /* Ajustes para pantallas pequeñas */
-    @media (max-width: 768px) {
-        .contact-form form p input[type=text],
-        .contact-form form p input[type=tel],
-        .contact-form form p input[type=email],
-        .contact-form form p .asunto-field {
-            width: 100%; /* Hace que los campos ocupen todo el ancho */
-            margin-bottom: 15px; /* Espacio entre los campos */
-        }
-    
-        .contact-form form p {
-            text-align: left; /* Alinea los campos a la izquierda */
-        }
+
+    .contact-form form p .asunto-field {
+        margin-top: 20px; /* Espacio entre el campo 'asunto' y el campo 'teléfono' */
     }
-    </style>
+}
+
+
+</style>
 
 
 {% block css %}
@@ -80,7 +87,8 @@
             <div class="col-lg-8 mb-5 mb-lg-0">
                 <div class="form-title">
                     <h2>¿Tienes alguna pregunta?</h2>
-                    <p>Si necesitas más información sobre nuestros servicios de arriendo de maquinaria o cualquier otra consulta, por favor completa el siguiente formulario. Estamos aquí para asistirte.</p>
+                    <p>Si necesitas más información sobre nuestros servicios de arriendo de maquinaria o cualquier otra
+                        consulta, por favor completa el siguiente formulario. Estamos aquí para asistirte.</p>
                 </div>
                 <div id="form_status"></div>
                 <div class="contact-form">
@@ -89,15 +97,14 @@
                         {{ form.non_field_errors }}
                         <p>
                             {{ form.nombre }}
-                           
-                            {{ form.email }}
+                    
+                            {{ form.email }}    
                         </p>
-                      
+                    
                         <p>
                             {{ form.telefono }}
-                            
+                            ‎ 
                             {{ form.asunto }}
-                          
                         </p>
                     
                         <p>
@@ -106,6 +113,7 @@
                         <input type="hidden" name="token" value="FsWga4&@f6aw" />
                         <p><input type="submit" value="Enviar" class="btn-submit"></p>
                     </form>
+                    
                 </div>
             </div>
             <div class="col-lg-4">

@@ -10,6 +10,15 @@
         margin-bottom: 40px;
     }
 
+
+    @media (max-width: 767px) {
+    .content-column h3 .orange-text {
+        display: inline-block;
+        margin-bottom: 1.5rem; /* Ajusta este valor según sea necesario */
+    }
+}
+
+
  
 
     .image-column .image img {
@@ -107,7 +116,6 @@
             <!-- Content Column -->
             <div class="content-column col-lg-6">
                 <h3><span class="orange-text">Arriendo</span> de Maquinarias</h3>
-
                 <div class="text">Ofrecemos una amplia gama de maquinaria de construcción para tus proyectos. Cotiza
                     ahora y asegura la disponibilidad de equipos de alta calidad para tus necesidades.</div>
                 <a href="{% url 'productos' %}" class="cart-btn mt-3"><i class="fas fa-eye"></i> Ver Maquinarias</a>
@@ -115,6 +123,8 @@
         </div>
     </div>
 </section>
+
+
 
 <!-- end cart banner section -->
 
