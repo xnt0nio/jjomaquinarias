@@ -3,6 +3,7 @@ from django.contrib import messages
 from .forms import *
 from .models import *
 from django.core.paginator import Paginator
+from django.shortcuts import redirect
 
 
 
@@ -29,7 +30,7 @@ def add(request):
 
 def producto(request, id):
     producto = get_object_or_404(Producto, id=id)
-    productos_similares = Producto.objects.filter(tipo=producto.tipo).exclude(id=producto.id)[:3]  
+    productos_similares = Producto.objects.filter(tipo=producto.tipo).exclude(id=producto.id)[:4]  
     data = {
         'producto': producto,
         'productos_similares': productos_similares,
@@ -80,9 +81,12 @@ def update(request, id):
     return render(request, 'core/update-product.html', data)
 
 
+
 def delete(request, id):
-    producto = Producto.objects.get(id=id) # OBTIENE UN PRODUCTO POR EL ID
+    producto = get_object_or_404(Producto, id=id)  # Usa get_object_or_404 para manejar el caso en que el ID no exista
     producto.delete()
+    return redirect('productos')  # Redirige a la vista de lista de productos o a cualquier otra vista
+
 
 
 

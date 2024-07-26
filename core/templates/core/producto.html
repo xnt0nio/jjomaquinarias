@@ -1,49 +1,68 @@
 {% extends 'core/base.html' %}
 {% load static %}
 <style>
-    .product-image img {
-    height: 200px; /* Define la altura deseada */
-    width: auto; /* Ajusta el ancho automáticamente para mantener la proporción */
-    object-fit: cover; /* Corta la imagen para llenar el contenedor manteniendo la proporción */
+ .single-product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido dentro de la tarjeta */
+    width: calc(25% - 30px); /* Ajusta el ancho para pantallas grandes */
+    box-sizing: border-box;
+    max-height: 450px; /* Aumenta la altura máxima */
+    border: 1px solid #ddd; /* Opcional: añade un borde */
+    border-radius: 8px; /* Opcional: bordes redondeados */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    background-color: #fff; /* Color de fondo */
+    padding: 20px; /* Espacio interno */
+    margin-bottom: 30px; /* Espacio en la parte inferior */
+    text-align: center; /* Centra el texto dentro de la tarjeta */
 }
 
+.product-image img {
+    height: 200px; /* Ajusta la altura de la imagen */
+    width: 100%; /* Asegura que la imagen ocupe el ancho completo */
+    object-fit: cover; /* Cubre el contenedor manteniendo la proporción */
+}
 
-.more-products .product-lists {
+.product-content {
+    flex-grow: 1; /* Permite que el contenido de la tarjeta crezca y llene el espacio disponible */
+    text-align: center; /* Centra el texto dentro de la tarjeta */
+}
+
+.product-content h3 {
+    font-size: 1.2em; /* Ajusta el tamaño del texto */
+    margin: 10px 0; /* Espacio superior e inferior */
+    padding: 0; /* Elimina rellenos adicionales */
+    overflow: hidden; /* Oculta el texto que se desborda */
+    text-overflow: ellipsis; /* Muestra puntos suspensivos si el texto es muy largo */
+    white-space: nowrap; /* Asegura que el texto no se divida en varias líneas */
+    line-height: 1.2em; /* Ajusta el alto de la línea para evitar desbordamientos */
+}
+
+.product-content a {
+    display: inline-block; /* Hace que los enlaces se comporten como bloques en línea */
+    margin-top: 10px; /* Espacio superior para separar del título */
+    color: #d44638; /* Ajusta el color del enlace según sea necesario */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+
+.product-lists {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
-}
-
-.more-products .single-product-item {
-    width: calc(33.333% - 30px);
-    box-sizing: border-box;
-    max-height: 390px;
-}
-
-.more-products .product-content {
-    text-align: center;
-    padding: 20px;
+    gap: 30px; /* Espacio entre las tarjetas */
+    justify-content: center; /* Centra las tarjetas en el contenedor */
 }
 
 @media (max-width: 992px) {
-    .more-products .single-product-item {
-        width: calc(50% - 30px);
+    .single-product-item {
+        width: calc(50% - 30px); /* Ajusta el ancho para pantallas medianas */
     }
 }
 
 @media (max-width: 768px) {
-    .more-products .single-product-item {
-        width: 100%;
+    .single-product-item {
+        width: calc(100% - 30px); /* Ajusta el ancho para pantallas pequeñas */
     }
 }
-
-.more-products .product-image img {
-    height: 200px;
-    width: auto;
-    object-fit: cover;
-}
-
-
 
 .more-products {
     margin-bottom: 40px; /* Ajusta este valor para aumentar o disminuir el espacio debajo de la sección */
@@ -268,38 +287,41 @@
     </div>
 </div>
 
-<div class="more-products mb-150 spacing-bottom">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2 text-center">
-                <div class="section-title">
-                    <h3><span class="orange-text">Productos</span> similares</h3>
+    <div class="more-products mb-150 spacing-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="section-title">
+                        <h3><span class="orange-text">Productos</span> similares</h3>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="product-lists" style="display: flex; flex-wrap: wrap; gap: 30px;">
-            {% for similar in productos_similares %}
-            <div class="single-product-item" style="width: calc(33.333% - 30px); box-sizing: border-box; max-height: 390px; margin: 4 15px;">
-                <div class="product-image">
-                    <a href="{% url 'producto' similar.id %}">
-                        <img src="{{ similar.imagen.url }}" alt="{{ similar.nombre }}" style="height: 200px; width: auto; object-fit: cover;">
-                    </a>
+            <div class="product-lists row">
+                {% for similar in productos_similares %}
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="single-product-item" style="max-height: 390px;">
+                        <div class="product-image">
+                            <a href="{% url 'producto' similar.id %}">
+                                <img src="{{ similar.imagen.url }}" alt="{{ similar.nombre }}" style="height: 200px; width: 100%; object-fit: cover;">
+                            </a>
+                        </div>
+                        <div class="product-content text-center" style="padding: 20px;">
+                            <h3>{{ similar.nombre }}</h3>
+                            <a href="{% url 'producto' similar.id %}" class="cart-btn">
+                                <i class="fas fa-eye"></i> Ver
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-content" style="text-align: center; padding: 20px;">
-                    <h3>{{ similar.nombre }}</h3>
-                    <a href="{% url 'producto' similar.id %}" class="cart-btn">
-                        <i class="fas fa-eye"></i> Ver
-                    </a>
-                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </div>
-</div>
 
 
 
 
 {% endblock %}
 {% block js %}
+
 {% endblock %}

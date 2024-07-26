@@ -30,6 +30,47 @@
 		/* Espaciado interno del contenedor */
 	}
 
+
+
+
+	.product-lists .single-product-item .product-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		/* Centra los botones horizontalmente */
+	}
+
+	.product-buttons {
+		display: flex;
+		gap: 10px;
+		/* Espacio entre los botones */
+		margin-top: 10px;
+		/* Espacio superior entre el título y los botones */
+	}
+
+	.product-buttons .cart-btn {
+		display: inline-flex;
+		align-items: center;
+		padding: 10px 15px;
+		text-decoration: none;
+		color: #fff;
+		/* Cambia el color del texto según tu diseño */
+		background-color: #ffde59;
+		/* Cambia el color de fondo según tu diseño */
+		border-radius: 4px;
+		/* Bordes redondeados */
+		transition: background-color 0.3s;
+		/* Transición suave para el hover */
+	}
+
+	.product-buttons .cart-btn:hover {
+		background-color: #263e58;
+		/* Cambia el color de fondo al pasar el ratón */
+	}
+
+
+
+
 	@media (max-width: 992px) {
 		.single-product-item {
 			width: calc(50% - 30px);
@@ -117,16 +158,21 @@
 				</div>
 				<div class="product-content">
 					<h3>{{ producto.nombre }}</h3>
-					<a href="{% url 'producto' producto.id %}" class="cart-btn"><i class="fas fa-eye"></i>
-						Ver</a>
+					<div class="product-buttons">
+						<a href="{% url 'producto' producto.id %}" class="cart-btn"><i class="fas fa-eye"></i> Ver</a>
+						{% if user.is_authenticated and user.username == 'admin' %}
+						<a href="{% url 'update' producto.id %}" class="cart-btn"><i class="fa fa-refresh"></i>
+							Editar</a>
+							<a class="cart-btn" onclick="deleteProducto({{ producto.id }})"><i class="fa fa-trash"></i> Eliminar</a>
 
-						<a href="{% url 'update' producto.id %}" class="cart-btn"><i class="fa fa-refresh"></i> Editar</a>
-						<a href="{% url 'delete' producto.id %}" class="cart-btn" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto?');"><i class="fa fa-trash"></i> Eliminar</a>
-						
+							
+						{% endif %}
+					</div>
 				</div>
 			</div>
 			{% endfor %}
 		</div>
+
 
 
 		<div class="row">
@@ -185,5 +231,29 @@
 			$(this).addClass('active');
 		});
 	});
+
+
+
+	function deleteProducto(id) {
+		//alert(id);
+		//console.log("ID: "+id);
+		Swal.fire({
+			title: 'Eliminar',
+			text: '¿Desea eliminar producto?',
+			icon: 'info',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Eliminar'
+		}).then((result) => {
+			if (result.isConfirmed) {
+				Swal.fire('Eliminado!', 'Producto Eliminado Correctamente', 'success').then(function () {
+					window.location.href = "/delete/" + id + "/";
+				})
+			}
+		})
+	}	
 </script>
+
+
 {% endblock %}
