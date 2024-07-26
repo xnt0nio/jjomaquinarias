@@ -119,6 +119,10 @@
 					<h3>{{ producto.nombre }}</h3>
 					<a href="{% url 'producto' producto.id %}" class="cart-btn"><i class="fas fa-eye"></i>
 						Ver</a>
+
+						<a href="{% url 'update' producto.id %}" class="cart-btn"><i class="fa fa-refresh"></i> Editar</a>
+						<a href="{% url 'delete' producto.id %}" class="cart-btn" onclick="return confirm('¿Estás seguro de que quieres eliminar este producto?');"><i class="fa fa-trash"></i> Eliminar</a>
+						
 				</div>
 			</div>
 			{% endfor %}

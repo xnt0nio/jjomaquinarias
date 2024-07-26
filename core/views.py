@@ -40,7 +40,12 @@ def producto(request, id):
 
 
 def productos(request):
-    productos_list = Producto.objects.all()
+    try:
+        productos_list = Producto.objects.all()
+    except Exception as e:
+        print("Error al obtener productos:", e)
+        productos_list = []
+
     paginator = Paginator(productos_list, 9)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -52,6 +57,33 @@ def productos(request):
         'tipos': tipos,
     }
     return render(request, 'core/productos.html', data)
+
+
+
+
+
+
+def update(request, id):
+    producto = Producto.objects.get(id=id) # OBTIENE UN PRODUCTO POR EL ID
+    data = {
+        'form' : ProductoForm(instance=producto) # CARGAMOS EL PRODUCTO EN EL FORMULARIO
+    }
+
+    if request.method == 'POST':
+        formulario = ProductoForm(data=request.POST, instance=producto, files=request.FILES) # NUEVA INFORMACION
+        if formulario.is_valid():
+            formulario.save() # INSERT INTO.....
+            #data['msj'] = "Producto actualizado correctamente"
+            messages.success(request, "Producto modificado correctamente")
+            data['form'] = formulario # CARGA LA NUEVA INFOR EN EL FORMULARIO
+
+    return render(request, 'core/update-product.html', data)
+
+
+def delete(request, id):
+    producto = Producto.objects.get(id=id) # OBTIENE UN PRODUCTO POR EL ID
+    producto.delete()
+
 
 
 

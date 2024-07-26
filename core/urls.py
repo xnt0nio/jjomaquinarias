@@ -16,6 +16,8 @@ urlpatterns = [
     path('vision', vision, name="vision"),
     path('mision', mision, name="mision"),
     path('contacto/', contacto, name='contacto'),
+    path('update/<id>/', update, name="update"),
+    path('delete/<id>/', delete, name="delete"),
   
 
 ]
