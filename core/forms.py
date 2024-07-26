@@ -1,5 +1,5 @@
 from django import forms
-from .models import Producto
+from .models import *
 
 class ProductoForm(forms.ModelForm):
     class Meta:
@@ -36,3 +36,18 @@ class ProductoForm(forms.ModelForm):
             'caracteristica': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
             'equipamiento': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
         }
+
+
+
+class MensajeForm(forms.ModelForm):
+    class Meta:
+        model = mensaje
+        fields = ['nombre', 'email', 'telefono', 'asunto', 'mensaje']
+        widgets = {
+            'nombre': forms.TextInput(attrs={'placeholder': 'Nombre'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'Correo electrónico'}),
+            'telefono': forms.TextInput(attrs={'placeholder': 'Teléfono'}),
+            'asunto': forms.TextInput(attrs={'placeholder': 'Asunto'}),
+            'mensaje': forms.Textarea(attrs={'placeholder': 'Mensaje'}),
+        }
+    

@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
 from .forms import *
 from .models import *
 from django.core.paginator import Paginator
@@ -61,6 +62,25 @@ def contacto(request):
 
 def sobreNosotros(request):
     return render(request, 'core/sobreNosotros.html')
+
+
+
+def contacto(request):
+    if request.method == 'POST':
+        form = MensajeForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Mensaje enviado exitosamente.')
+            return redirect('contacto')
+        else:
+            messages.error(request, 'Por favor corrige los errores.')
+    else:
+        form = MensajeForm()
+    
+    return render(request, 'core/contacto.html', {'form': form})
+
+
+
 
 def vision(request):
     return render(request, 'core/vision.html')

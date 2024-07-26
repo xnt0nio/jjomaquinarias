@@ -42,3 +42,15 @@ class Producto(models.Model):
 
     def __str__(self):
         return self.nombre
+    
+
+class mensaje(models.Model):
+    nombre = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    telefono = models.CharField(max_length=15)
+    asunto = models.CharField(max_length=100)
+    mensaje = models.TextField()
+    fecha = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.nombre} - {self.asunto}"     

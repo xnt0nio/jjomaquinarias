@@ -15,6 +15,7 @@ urlpatterns = [
     path('sobreNosotros', sobreNosotros, name="sobreNosotros"),
     path('vision', vision, name="vision"),
     path('mision', mision, name="mision"),
+    path('contacto/', contacto, name='contacto'),
   
 
 ]
