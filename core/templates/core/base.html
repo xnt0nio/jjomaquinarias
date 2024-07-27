@@ -44,6 +44,9 @@
 							<li><a href="{% url 'productos' %}">Nuestros servicios</a></li>
 							<li><a href="{% url 'contacto' %}">Contacto</a></li>
 							<li><a href="{% url 'sobreNosotros' %}">Sobre nosotros</a></li>
+							{% if user.is_authenticated and user.username == 'admin' %}
+							<li><a href="{% url 'mensajes' %}">Mensajes</a></li>
+							{% endif %}
 							<li>
 								<div class="header-icons">
 									<a class="mobile-hide" href="https://www.facebook.com/profile.php?id=61562551873660&mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -196,6 +199,4 @@
 
 
 {% block js %}
-
-
 {% endblock %}

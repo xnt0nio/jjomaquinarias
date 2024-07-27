@@ -118,8 +118,17 @@ def contacto(request):
 
 
 
-def vision(request):
-    return render(request, 'core/vision.html')
+def mensajes(request):
+    mensajes = mensaje.objects.all().order_by('-fecha')
+    return render(request, 'core/mensajes.html', {'mensajes': mensajes})
+
+
+
+def delete_mensaje(request, id):
+    mensaje_instance = get_object_or_404(mensaje, id=id)
+    mensaje_instance.delete()
+    return redirect('mensajes')
+
 
 
 def mision(request):

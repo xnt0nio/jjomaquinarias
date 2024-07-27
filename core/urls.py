@@ -13,11 +13,12 @@ urlpatterns = [
     path('productos', productos, name="productos"),
     path('contacto', contacto, name="contacto"),
     path('sobreNosotros', sobreNosotros, name="sobreNosotros"),
-    path('vision', vision, name="vision"),
+    path('mensajes', mensajes, name="mensajes"),
     path('mision', mision, name="mision"),
     path('contacto/', contacto, name='contacto'),
     path('update/<id>/', update, name="update"),
     path('delete/<id>/', delete, name="delete"),
-  
+    
+    path('mensaje/delete/<int:id>/', delete_mensaje, name='delete_mensaje'),
 
 ]
