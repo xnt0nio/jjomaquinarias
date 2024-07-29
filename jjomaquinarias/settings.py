@@ -111,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es-mx'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Santiago'
 
 USE_I18N = True
 
@@ -140,8 +140,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # CONFIGURANDO EL SISTEMA DE MENSAJERIA DE DJANGO
 MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
 # CONFIGURANDO RUTA DEL LOGIN
+LOGIN_URL = '/login/'
+
+
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'

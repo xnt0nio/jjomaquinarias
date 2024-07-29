@@ -1,5 +1,6 @@
 from django import forms
 from .models import *
+from django.contrib.auth.forms import AuthenticationForm
 
 class ProductoForm(forms.ModelForm):
     class Meta:
@@ -50,3 +51,8 @@ class MensajeForm(forms.ModelForm):
             'asunto': forms.TextInput(attrs={'placeholder': 'Asunto', 'class': 'asunto-field'}),
             'mensaje': forms.Textarea(attrs={'placeholder': 'Mensaje'}),
         }
+
+
+class CustomAuthenticationForm(AuthenticationForm):
+    username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Username'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}))
