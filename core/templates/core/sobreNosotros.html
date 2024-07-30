@@ -6,58 +6,59 @@
         display: flex;
         align-items: flex-start;
         flex-wrap: wrap;
-        gap: 20px; /* Espacio entre el texto y la imagen */
+        gap: 20px;
     }
 
     .single-article-text {
         flex: 1;
-        padding-right: 20px; /* Espacio entre el texto y la imagen */
+        padding-right: 20px;
     }
 
     .single-artcile-bg {
         background-image: url('{% static "core/img/jjoMaquinarias/logo.jpg" %}');
-        background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
-        background-position: top right; /* Posiciona la imagen en la parte superior derecha */
-        background-repeat: no-repeat; /* Evita que la imagen se repita */
+        background-size: cover;
+        background-position: top right;
+        background-repeat: no-repeat;
         height: 400px;
         width: 400px;
         border-radius: 5px;
         margin-bottom: 20px;
     }
 
-    .single-article-text h2, .single-article-text h3 {
+    .single-article-text h2,
+    .single-article-text h3 {
         font-size: 24px;
         font-weight: 600;
         line-height: 1.4;
-        margin-bottom: 30px; /* Espacio debajo del título */
-        margin-top: 30px; /* Espacio arriba del título */
-        text-align: center; /* Centra el texto del título */
+        margin-bottom: 30px;
+        margin-top: 30px;
+        text-align: center;
     }
 
     .single-article-text p {
         font-size: 15px;
         line-height: 1.6;
         color: #263e58;
-        text-align: justify; /* Justifica el texto de los párrafos */
+        text-align: justify;
     }
 
     h3 {
         font-size: 24px;
         font-weight: 600;
         line-height: 1.4;
-        margin-bottom: 30px; /* Espacio debajo de los títulos h3 */
-        margin-top: 30px; /* Espacio arriba de los títulos h3 */
-        text-align: center; /* Centra el texto del título h3 */
+        margin-bottom: 30px;
+        margin-top: 30px;
+        text-align: center;
     }
 
     .orange-text {
-        color: orange; /* Asegúrate de definir este color si no está definido */
+        color: orange;
     }
 </style>
 {% endblock %}
 {% block contenido %}
 
-<!-- Área de héroe -->
+
 <div class="hero-area hero-bg">
     <div class="container">
         <div class="row">
@@ -73,13 +74,13 @@
     </div>
 </div>
 
-<!-- PreLoader -->
+
 <div class="loader">
     <div class="loader-inner">
         <div class="circle"></div>
     </div>
 </div>
-<!-- PreLoader Ends -->
+
 
 <div class="mt-150 mb-150">
     <div class="container">
@@ -88,32 +89,62 @@
                 <div class="single-article-section">
                     <div class="single-article-text">
                         <h3><span class="orange-text">Mis</span>ión</h3>
-                        <p>En JJO Maquinarias nos especializamos en el arriendo de maquinaria pesada para la industria, proporcionando equipos de alta calidad y confiabilidad para satisfacer las necesidades operativas de nuestros clientes. Nuestra misión es facilitar el progreso y la eficiencia en proyectos industriales y de construcción, mediante soluciones flexibles y accesibles que aseguren el cumplimiento de los más altos estándares de rendimiento y seguridad.</p>
-    
+                        <p>En JJO Maquinarias nos especializamos en el arriendo de maquinaria pesada para la industria,
+                            proporcionando equipos de alta calidad y confiabilidad para satisfacer las necesidades
+                            operativas de nuestros clientes. Nuestra misión es facilitar el progreso y la eficiencia en
+                            proyectos industriales y de construcción, mediante soluciones flexibles y accesibles que
+                            aseguren el cumplimiento de los más altos estándares de rendimiento y seguridad.</p>
+
                         <h3><span class="orange-text">Vis</span>ión</h3>
-                        <p>Ser reconocidos como líderes en el sector de arriendo de maquinaria pesada, destacándonos por nuestra flota diversificada, calidad excepcional de servicio y compromiso con la innovación. Nos esforzamos por ser el aliado preferido de las industrias que buscan eficiencia y rentabilidad en sus proyectos, consolidando nuestra presencia a nivel regional mediante prácticas sostenibles y una atención al cliente inigualable.</p>
-                    
-                      
+                        <p>Ser reconocidos como líderes en el sector de arriendo de maquinaria pesada, destacándonos por
+                            nuestra flota diversificada, calidad excepcional de servicio y compromiso con la innovación.
+                            Nos esforzamos por ser el aliado preferido de las industrias que buscan eficiencia y
+                            rentabilidad en sus proyectos, consolidando nuestra presencia a nivel regional mediante
+                            prácticas sostenibles y una atención al cliente inigualable.</p>
+
+
                     </div>
                     <div class="single-artcile-bg"></div>
                 </div>
 
                 <div>
                     <h3><span class="orange-text">Nuestros</span> servicios</h3>
-                    <p>En JJO Maquinarias, ofrecemos una amplia gama de servicios especializados en el arriendo de maquinaria pesada para satisfacer las necesidades variadas de nuestros clientes en proyectos industriales y de construcción. Nuestra flota de equipos incluye:</p>
-                    <p>Excavadoras de diversos tamaños y capacidades para excavación y carga eficientes. Rodillos compactadores para compactación de suelos y asfalto, garantizando superficies firmes y duraderas.</p>
-                    <p>Cargadores frontales robustos y versátiles para la manipulación eficaz de materiales en el sitio. Martillos hidráulicos ideales para demolición controlada y trabajos de excavación precisa.</p>
-                
-                    <p>Además de nuestro arriendo de equipos especializados, ofrecemos un servicio integral de traslado de carga por carretera, asegurando la entrega puntual y segura de equipos y materiales a su destino final.</p>
-                    <p>Nos enorgullece ofrecer soluciones completas que no solo cumplen, sino que superan las expectativas de nuestros clientes, respaldadas por nuestro compromiso con la calidad y la satisfacción del cliente en cada paso del camino.</p>
-              
-                    <h3><span class="orange-text">Nuestra</span> historia</h3>
-                    <p>Nuestra empresa, JJO MAQUINARIAS, comenzó su trayectoria en el año 2019 con la visión de cubrir una necesidad creciente en el sector industrial y de construcción. Fundada por Óscar Ortega y Jorge Pérez en Valparaíso, inicialmente nos especializamos en el arriendo de equipos específicos para proyectos locales.</p>
-                    <p>Con el tiempo, hemos crecido de manera constante, ampliando nuestra flota para incluir una variedad completa de maquinaria pesada adaptada a las demandas cambiantes del mercado. Esta expansión nos ha permitido atender proyectos de gran envergadura en diversas industrias, desde la construcción de infraestructuras hasta proyectos energéticos y mineros.</p>
-                    <p>Nuestra historia está marcada por un compromiso continuo con la calidad y la satisfacción del cliente. A lo largo de los años, hemos establecido relaciones sólidas con empresas líderes, gracias a nuestra reputación por equipos confiables, servicio personalizado y un enfoque riguroso en la seguridad operativa.</p>
-                    <p>Mirando hacia el futuro, JJO se propone seguir siendo un referente en el sector, innovando constantemente para ofrecer soluciones eficientes y sostenibles que impulsen el éxito de nuestros clientes. Con una mirada hacia la expansión internacional y el desarrollo de tecnologías emergentes, estamos preparados para enfrentar los desafíos del mañana con la misma pasión y dedicación que nos han definido desde nuestros inicios.</p>
+                    <p>En JJO Maquinarias, ofrecemos una amplia gama de servicios especializados en el arriendo de
+                        maquinaria pesada para satisfacer las necesidades variadas de nuestros clientes en proyectos
+                        industriales y de construcción. Nuestra flota de equipos incluye:</p>
+                    <p>Excavadoras de diversos tamaños y capacidades para excavación y carga eficientes. Rodillos
+                        compactadores para compactación de suelos y asfalto, garantizando superficies firmes y
+                        duraderas.</p>
+                    <p>Cargadores frontales robustos y versátiles para la manipulación eficaz de materiales en el sitio.
+                        Martillos hidráulicos ideales para demolición controlada y trabajos de excavación precisa.</p>
 
- 
+                    <p>Además de nuestro arriendo de equipos especializados, ofrecemos un servicio integral de traslado
+                        de carga por carretera, asegurando la entrega puntual y segura de equipos y materiales a su
+                        destino final.</p>
+                    <p>Nos enorgullece ofrecer soluciones completas que no solo cumplen, sino que superan las
+                        expectativas de nuestros clientes, respaldadas por nuestro compromiso con la calidad y la
+                        satisfacción del cliente en cada paso del camino.</p>
+
+                    <h3><span class="orange-text">Nuestra</span> historia</h3>
+                    <p>Nuestra empresa, JJO MAQUINARIAS, comenzó su trayectoria en el año 2019 con la visión de cubrir
+                        una necesidad creciente en el sector industrial y de construcción. Fundada por Óscar Ortega y
+                        Jorge Pérez en Valparaíso, inicialmente nos especializamos en el arriendo de equipos específicos
+                        para proyectos locales.</p>
+                    <p>Con el tiempo, hemos crecido de manera constante, ampliando nuestra flota para incluir una
+                        variedad completa de maquinaria pesada adaptada a las demandas cambiantes del mercado. Esta
+                        expansión nos ha permitido atender proyectos de gran envergadura en diversas industrias, desde
+                        la construcción de infraestructuras hasta proyectos energéticos y mineros.</p>
+                    <p>Nuestra historia está marcada por un compromiso continuo con la calidad y la satisfacción del
+                        cliente. A lo largo de los años, hemos establecido relaciones sólidas con empresas líderes,
+                        gracias a nuestra reputación por equipos confiables, servicio personalizado y un enfoque
+                        riguroso en la seguridad operativa.</p>
+                    <p>Mirando hacia el futuro, JJO se propone seguir siendo un referente en el sector, innovando
+                        constantemente para ofrecer soluciones eficientes y sostenibles que impulsen el éxito de
+                        nuestros clientes. Con una mirada hacia la expansión internacional y el desarrollo de
+                        tecnologías emergentes, estamos preparados para enfrentar los desafíos del mañana con la misma
+                        pasión y dedicación que nos han definido desde nuestros inicios.</p>
+
+
                 </div>
             </div>
         </div>

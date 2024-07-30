@@ -1,53 +1,52 @@
 {% extends 'core/base.html' %}
 {% load static %}
 <style>
-.contact-form form p input[type=text],
-.contact-form form p input[type=tel],
-.contact-form form p input[type=email] {
-    width: 49%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    display: inline-block;
-    box-sizing: border-box;
-}
-
-.contact-form form p textarea {
-    border: 1px solid #ddd;
-    padding: 15px;
-    height: 200px;
-    border-radius: 3px;
-    width: 100%;
-    resize: none;
-    box-sizing: border-box;
-}
-
-/* Estilos específicos para el campo 'asunto' */
-.asunto-field {
-    width: calc(100% - 32px); /* Ajusta el ancho para que tenga espacio suficiente */
-}
-
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 768px) {
     .contact-form form p input[type=text],
     .contact-form form p input[type=tel],
-    .contact-form form p input[type=email],
-    .contact-form form p .asunto-field,
+    .contact-form form p input[type=email] {
+        width: 49%;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        display: inline-block;
+        box-sizing: border-box;
+    }
+
     .contact-form form p textarea {
-        width: 100%; /* Hace que los campos ocupen todo el ancho */
-        margin-bottom: 15px; /* Espacio entre los campos */
+        border: 1px solid #ddd;
+        padding: 15px;
+        height: 200px;
+        border-radius: 3px;
+        width: 100%;
+        resize: none;
+        box-sizing: border-box;
     }
 
-    .contact-form form p {
-        text-align: left; /* Alinea los campos a la izquierda */
+
+    .asunto-field {
+        width: calc(100% - 32px);
     }
 
-    .contact-form form p .asunto-field {
-        margin-top: 20px; /* Espacio entre el campo 'asunto' y el campo 'teléfono' */
+
+    @media (max-width: 768px) {
+
+        .contact-form form p input[type=text],
+        .contact-form form p input[type=tel],
+        .contact-form form p input[type=email],
+        .contact-form form p .asunto-field,
+        .contact-form form p textarea {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .contact-form form p {
+            text-align: left;
+        }
+
+        .contact-form form p .asunto-field {
+            margin-top: 20px;
+        }
     }
-}
-
-
 </style>
 
 
@@ -55,13 +54,13 @@
 {% endblock %}
 {% block contenido %}
 
-<!--PreLoader-->
+
 <div class="loader">
     <div class="loader-inner">
         <div class="circle"></div>
     </div>
 </div>
-<!--PreLoader Ends-->
+
 
 <div class="hero-area hero-bg">
     <div class="container">
@@ -80,7 +79,7 @@
     </div>
 </div>
 
-<!-- contact form -->
+
 <div class="contact-from-section mt-150 mb-150">
     <div class="container">
         <div class="row">
@@ -97,23 +96,21 @@
                         {{ form.non_field_errors }}
                         <p>
                             {{ form.nombre }}
-                    
-                            {{ form.email }}    
+
+                            {{ form.email }}
                         </p>
-                    
                         <p>
                             {{ form.telefono }}
-                            ‎ 
+                            ‎
                             {{ form.asunto }}
                         </p>
-                    
                         <p>
                             {{ form.mensaje }}
                         </p>
                         <input type="hidden" name="token" value="FsWga4&@f6aw" />
                         <p><input type="submit" value="Enviar" class="btn-submit"></p>
                     </form>
-                    
+
                 </div>
             </div>
             <div class="col-lg-4">
@@ -136,9 +133,6 @@
     </div>
 </div>
 
-<!-- end contact form -->
-
-<!-- find our location -->
 <div class="find-location blue-bg">
     <div class="container">
         <div class="row">
@@ -148,17 +142,13 @@
         </div>
     </div>
 </div>
-<!-- end find our location -->
 
-<!-- google map section -->
 <div class="embed-responsive embed-responsive-21by9">
     <iframe
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3744.1273575356026!2d-70.1539501!3d-20.2120281!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91521153f50e92d9%3A0xc62c117ba0646bac!2sMarketing%20DS!5e0!3m2!1ses-419!2scl!4v1721774673942!5m2!1ses-419!2scl"
         width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""
         class="embed-responsive-item"></iframe>
 </div>
-<!-- end google map section -->
-
 {% endblock %}
 {% block js %}
 {% endblock %}

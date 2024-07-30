@@ -17,7 +17,7 @@ class Producto(models.Model):
     marca = models.CharField(max_length=50, null=True, blank=True)
     modelo = models.CharField(max_length=50, null=True, blank=True)
     motor = models.CharField(max_length=100, null=True, blank=True)
-    potencia = models.CharField(max_length=100, null=True, blank=True)
+    potencia = models.CharField(max_length=30, null=True, blank=True)
     traccion = models.CharField(max_length=10, null=True, blank=True)
     alimentacion = models.CharField(max_length=20, null=True, blank=True)
     neumaticos = models.CharField(max_length=20, null=True, blank=True)
@@ -25,8 +25,8 @@ class Producto(models.Model):
     equipamiento = models.TextField(null=True, blank=True)
 
     def clean(self):
-        if self.potencia is not None and self.potencia < 0:
-            raise ValidationError('La potencia no puede ser negativa')
+        if self.potencia and len(self.marca) > 30:
+            raise ValidationError('La potencia no puede tener más de 30 caracteres')
         if self.marca and len(self.marca) > 50:
             raise ValidationError('La marca no puede tener más de 50 caracteres')
         if self.modelo and len(self.modelo) > 50:

@@ -120,8 +120,8 @@ def delete_mensaje(request, id):
     return redirect('mensajes')
 
 
-def nodisponible(request, invalid_path=None):
-    return render(request, 'core/nodisponible.html')
+def nodisponible(request, invalid_path):
+    return render(request, 'core/nodisponible.html', status=404)
 
 
 def mision(request):
@@ -138,7 +138,7 @@ def user_login(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, f"Bienvenido, {username}!")
-                return redirect('index')  # Redirige a la página de inicio o a la que desees
+                return redirect('index')  
             else:
                 messages.error(request, "Nombre de usuario o contraseña incorrectos.")
         else:
@@ -153,6 +153,6 @@ from django.contrib.auth import logout
 def custom_logout(request):
     if request.method == "POST":
         logout(request)
-        return redirect('index')  # Redirige a la página de inicio o a la que desees
+        return redirect('index')  
     else:
         return redirect('index')

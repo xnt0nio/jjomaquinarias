@@ -20,10 +20,10 @@
 {% endblock %}
 {% block js %}
 
-{% if messages %} 
-        {% for aux in messages %} 
-    <script>
-        Swal.fire({
+{% if messages %}
+{% for aux in messages %}
+<script>
+    Swal.fire({
         title: 'Confirmación',
         text: '{{ aux }}',
         icon: 'success',
@@ -31,9 +31,9 @@
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Aceptar'
-        })
-    </script>
-        {% endfor %} 
+    })
+</script>
+{% endfor %}
 {% endif %}
 
 {% endblock %}

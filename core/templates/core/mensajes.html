@@ -8,11 +8,13 @@
         margin: 0;
         padding: 0;
     }
+
     h1 {
         margin-top: 20px;
         color: #333;
         text-align: center;
     }
+
     .cards-container {
         display: flex;
         flex-direction: column;
@@ -21,15 +23,17 @@
         max-width: 800px;
         margin: 20px auto;
     }
+
     .card {
         background-color: #fff;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin: 40px 0; /* Aumentar el margen vertical */
+        margin: 40px 0;
         padding: 20px;
         width: 100%;
         position: relative;
     }
+
     .card-header {
         font-size: 1.5em;
         margin-bottom: 10px;
@@ -38,9 +42,11 @@
         align-items: center;
         justify-content: space-between;
     }
+
     .card-content p {
         margin: 5px 0;
     }
+
     .card-footer {
         font-size: 0.9em;
         color: #666;
@@ -49,8 +55,9 @@
         justify-content: space-between;
         align-items: center;
     }
+
     .delete-btn {
-        background-color: #263e58; /* Color rojo para el botón de eliminación */
+        background-color: #263e58;
         color: #fff;
         padding: 5px 10px;
         border-radius: 4px;
@@ -59,6 +66,7 @@
         display: inline-block;
         margin-right: 10px;
     }
+
     .delete-btn i {
         margin-right: 5px;
     }
@@ -67,8 +75,6 @@
 
 {% block contenido %}
 
-<!-- Área de héroe -->
-<!-- Área de héroe adaptada para mensajes -->
 <div class="hero-area hero-bg">
     <div class="container">
         <div class="row">
@@ -107,7 +113,8 @@
             <p><strong>Mensaje:</strong> {{ mensaje.mensaje }}</p>
         </div>
         <div class="card-footer">
-            <a class="delete-btn" href="#" onclick="deleteProducto({{ mensaje.id }}); return false;"><i class="fa fa-trash"></i> Eliminar</a>
+            <a class="delete-btn" href="#" onclick="deleteProducto({{ mensaje.id }}); return false;"><i
+                    class="fa fa-trash"></i> Eliminar</a>
             {{ mensaje.fecha }}
         </div>
     </div>

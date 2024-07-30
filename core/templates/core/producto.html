@@ -1,77 +1,76 @@
 {% extends 'core/base.html' %}
 {% load static %}
 <style>
- .single-product-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra el contenido dentro de la tarjeta */
-    width: calc(25% - 30px); /* Ajusta el ancho para pantallas grandes */
-    box-sizing: border-box;
-    max-height: 450px; /* Aumenta la altura máxima */
-    border: 1px solid #ddd; /* Opcional: añade un borde */
-    border-radius: 8px; /* Opcional: bordes redondeados */
-    overflow: hidden; /* Oculta el contenido que se desborda */
-    background-color: #fff; /* Color de fondo */
-    padding: 20px; /* Espacio interno */
-    margin-bottom: 30px; /* Espacio en la parte inferior */
-    text-align: center; /* Centra el texto dentro de la tarjeta */
-}
-
-.product-image img {
-    height: 200px; /* Ajusta la altura de la imagen */
-    width: 100%; /* Asegura que la imagen ocupe el ancho completo */
-    object-fit: cover; /* Cubre el contenedor manteniendo la proporción */
-}
-
-.product-content {
-    flex-grow: 1; /* Permite que el contenido de la tarjeta crezca y llene el espacio disponible */
-    text-align: center; /* Centra el texto dentro de la tarjeta */
-}
-
-.product-content h3 {
-    font-size: 1.2em; /* Ajusta el tamaño del texto */
-    margin: 10px 0; /* Espacio superior e inferior */
-    padding: 0; /* Elimina rellenos adicionales */
-    overflow: hidden; /* Oculta el texto que se desborda */
-    text-overflow: ellipsis; /* Muestra puntos suspensivos si el texto es muy largo */
-    white-space: nowrap; /* Asegura que el texto no se divida en varias líneas */
-    line-height: 1.2em; /* Ajusta el alto de la línea para evitar desbordamientos */
-}
-
-.product-content a {
-    display: inline-block; /* Hace que los enlaces se comporten como bloques en línea */
-    margin-top: 10px; /* Espacio superior para separar del título */
-    color: #d44638; /* Ajusta el color del enlace según sea necesario */
-    text-decoration: none; /* Elimina el subrayado de los enlaces */
-}
-
-.product-lists {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px; /* Espacio entre las tarjetas */
-    justify-content: center; /* Centra las tarjetas en el contenedor */
-}
-
-@media (max-width: 992px) {
     .single-product-item {
-        width: calc(50% - 30px); /* Ajusta el ancho para pantallas medianas */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: calc(25% - 30px);
+        box-sizing: border-box;
+        max-height: 450px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #fff;
+        padding: 20px;
+        margin-bottom: 30px;
+        text-align: center;
     }
-}
 
-@media (max-width: 768px) {
-    .single-product-item {
-        width: calc(100% - 30px); /* Ajusta el ancho para pantallas pequeñas */
+    .product-image img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
     }
-}
 
-.more-products {
-    margin-bottom: 40px; /* Ajusta este valor para aumentar o disminuir el espacio debajo de la sección */
-}
+    .product-content {
+        flex-grow: 1;
+        text-align: center;
+    }
 
-.container {
-    margin-bottom: 40px; /* Ajusta este valor si la sección está dentro de un contenedor con márgenes */
-}
+    .product-content h3 {
+        font-size: 1.2em;
+        margin: 10px 0;
+        padding: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 1.2em;
+    }
 
+    .product-content a {
+        display: inline-block;
+        margin-top: 10px;
+        color: #d44638;
+        text-decoration: none;
+    }
+
+    .product-lists {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    @media (max-width: 992px) {
+        .single-product-item {
+            width: calc(50% - 30px);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .single-product-item {
+            width: calc(100% - 30px);
+        }
+    }
+
+    .more-products {
+        margin-bottom: 40px;
+    }
+
+    .container {
+        margin-bottom: 40px;
+    }
 </style>
 {% block css %}
 {% endblock %}
@@ -100,14 +99,14 @@
                 <div class="section-title">
                     <h4 class="text-center"><span class="orange-text">precio sujeto</span> a cotización</h4>
                     <a class="social-btn" href="mailto:ventas@jjomaquinarias.cl"
-                    style="max-width: 200px; width: auto; display: flex; align-items: center; justify-content: center; margin: 0 auto 5px; padding: 0.5em 1em; text-decoration: none; color: #ffffff; background-color: #d44638; border-radius: 5px;">
-                    <i class="fas fa-envelope" style="margin-right: 0.5em;"></i> Enviar Correo
-                 </a>
-                 
-                 <a class="social-btn" href="https://wa.me/+56966378461"
-                    style="max-width: 200px; width: auto; display: flex; align-items: center; justify-content: center; margin: 0 auto 5px; padding: 0.5em 1em; text-decoration: none; color: #ffffff; background-color: #25D366; border-radius: 5px;">
-                    <i class="fab fa-whatsapp" style="margin-right: 0.5em;"></i> WhatsApp
-                 </a>
+                        style="max-width: 200px; width: auto; display: flex; align-items: center; justify-content: center; margin: 0 auto 5px; padding: 0.5em 1em; text-decoration: none; color: #ffffff; background-color: #d44638; border-radius: 5px;">
+                        <i class="fas fa-envelope" style="margin-right: 0.5em;"></i> Enviar Correo
+                    </a>
+
+                    <a class="social-btn" href="https://wa.me/+56966378461"
+                        style="max-width: 200px; width: auto; display: flex; align-items: center; justify-content: center; margin: 0 auto 5px; padding: 0.5em 1em; text-decoration: none; color: #ffffff; background-color: #25D366; border-radius: 5px;">
+                        <i class="fab fa-whatsapp" style="margin-right: 0.5em;"></i> WhatsApp
+                    </a>
                 </div>
             </div>
         </div>
@@ -137,7 +136,7 @@
                                                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-5">
                                                     <div class="list-box d-flex align-items-center">
                                                         <div class="list-icon">
-                                                            <i class="fas fa-tag"></i> <!-- Icono para "Marca" -->
+                                                            <i class="fas fa-tag"></i>
                                                         </div>
                                                         <div class="content">
                                                             <h3>Marca</h3>
@@ -151,7 +150,7 @@
                                                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-5">
                                                     <div class="list-box d-flex align-items-center">
                                                         <div class="list-icon">
-                                                            <i class="fas fa-car"></i> <!-- Icono para "Modelo" -->
+                                                            <i class="fas fa-car"></i>
                                                         </div>
                                                         <div class="content">
                                                             <h3>Modelo</h3>
@@ -166,7 +165,7 @@
                                                     <div
                                                         class="list-box d-flex justify-content-start align-items-center">
                                                         <div class="list-icon">
-                                                            <i class="fas fa-cogs"></i> <!-- Icono para "Motor" -->
+                                                            <i class="fas fa-cogs"></i>
                                                         </div>
                                                         <div class="content">
                                                             <h3>Motor</h3>
@@ -180,7 +179,7 @@
                                                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-5">
                                                     <div class="list-box d-flex align-items-center">
                                                         <div class="list-icon">
-                                                            <i class="fas fa-bolt"></i> <!-- Icono para "Potencia" -->
+                                                            <i class="fas fa-bolt"></i>
                                                         </div>
                                                         <div class="content">
                                                             <h3>Potencia</h3>
@@ -194,7 +193,7 @@
                                                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-5">
                                                     <div class="list-box d-flex align-items-center">
                                                         <div class="list-icon">
-                                                            <i class="fas fa-road"></i> <!-- Icono para "Tracción" -->
+                                                            <i class="fas fa-road"></i>
                                                         </div>
                                                         <div class="content">
                                                             <h3>Tracción</h3>
@@ -204,14 +203,14 @@
                                                 </div>
                                                 {% endif %}
 
-                                     
+
 
                                                 {% if producto.alimentacion %}
                                                 <div class="col-lg-4 col-md-6 mb-4 mb-lg-5">
                                                     <div class="list-box d-flex align-items-center">
                                                         <div class="list-icon">
                                                             <i class="fas fa-gas-pump"></i>
-                                                            <!-- Icono para "Alimentación" -->
+
                                                         </div>
                                                         <div class="content">
                                                             <h3>Alimentación</h3>
@@ -226,7 +225,7 @@
                                                     <div class="list-box d-flex align-items-center">
                                                         <div class="list-icon">
                                                             <i class="fas fa-circle"></i>
-                                                            <!-- Icono para "Neumáticos" -->
+
                                                         </div>
                                                         <div class="content">
                                                             <h3>Neumáticos</h3>
@@ -254,7 +253,7 @@
                                     data-parent="#accordionExample">
                                     <div class="card-body">
                                         <div class="shipping-address-form">
-                                            <p>{{ producto.caracteristica  }}</p>
+                                            <p>{{ producto.caracteristica }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -287,36 +286,39 @@
     </div>
 </div>
 
-    <div class="more-products mb-150 spacing-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 text-center">
-                    <div class="section-title">
-                        <h3><span class="orange-text">Productos</span> similares</h3>
-                    </div>
+<div class="more-products mb-150 spacing-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="section-title">
+                    <h3><span class="orange-text">Productos</span> similares</h3>
                 </div>
-            </div>
-            <div class="product-lists row">
-                {% for similar in productos_similares %}
-                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                    <div class="single-product-item" style="max-height: 390px;">
-                        <div class="product-image">
-                            <a href="{% url 'producto' similar.id %}">
-                                <img src="{{ similar.imagen.url }}" alt="{{ similar.nombre }}" style="height: 200px; width: 100%; object-fit: cover;">
-                            </a>
-                        </div>
-                        <div class="product-content text-center" style="padding: 20px;">
-                            <h3>{{ similar.nombre }}</h3>
-                            <a href="{% url 'producto' similar.id %}" class="cart-btn">
-                                <i class="fas fa-eye"></i> Ver
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
             </div>
         </div>
+        <div class="product-lists row">
+            {% for similar in productos_similares %}
+            {% if producto.vigente == 1 %}
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="single-product-item" style="max-height: 390px;">
+                    <div class="product-image">
+                        <a href="{% url 'producto' similar.id %}">
+                            <img src="{{ similar.imagen.url }}" alt="{{ similar.nombre }}"
+                                style="height: 200px; width: 100%; object-fit: cover;">
+                        </a>
+                    </div>
+                    <div class="product-content text-center" style="padding: 20px;">
+                        <h3>{{ similar.nombre }}</h3>
+                        <a href="{% url 'producto' similar.id %}" class="cart-btn">
+                            <i class="fas fa-eye"></i> Ver
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
     </div>
+</div>
 
 
 

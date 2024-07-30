@@ -27,24 +27,18 @@
 {% block css %}
 {% endblock %}
 
-<!-- header -->
 <div class="top-header-area" id="sticker">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-sm-12 text-center">
 				<div class="main-menu-wrap">
-					<!-- logo -->
-
-					<!-- logo -->
-
-					<!-- menu start -->
 					<nav class="main-menu">
 						<ul>
 							<li><a href="{% url 'index' %}">Inicio</a></li>
 							<li><a href="{% url 'productos' %}">Nuestros servicios</a></li>
 							<li><a href="{% url 'contacto' %}">Contacto</a></li>
 							<li><a href="{% url 'sobreNosotros' %}">Sobre nosotros</a></li>
-							{% if user.is_authenticated and user.username == 'admin' %}
+							{% if user.is_authenticated %}
 							<li><a href="{% url 'mensajes' %}">Mensajes</a></li>
 							<li><a href="{% url 'add' %}">agregar</a></li>
 							<li>
@@ -72,14 +66,13 @@
 						</ul>
 					</nav>
 					<div class="mobile-menu"></div>
-					<!-- menu end -->
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
-<!-- search area -->
+
 <div class="search-area">
 	<div class="container">
 		<div class="row">
@@ -96,9 +89,8 @@
 		</div>
 	</div>
 </div>
-<!-- end search area -->
 
-<!-- hero area -->
+
 <div class="hero-area hero-bg">
 	<div class="container">
 		<div class="row">
@@ -114,21 +106,10 @@
 		</div>
 	</div>
 </div>
-<!-- end hero area -->
-
-<!-- features list section -->
 
 
 
 {% block contenido %}
-
-
-
-
-
-
-
-
 {% endblock %}
 
 
@@ -143,7 +124,6 @@
 						soluciones eficientes para tus proyectos.</p>
 				</div>
 			</div>
-
 			<div class="col-lg-3 col-md-4 col-sm-12">
 				<div class="footer-box get-in-touch">
 					<h2 class="widget-title">Contacto</h2>
@@ -154,7 +134,6 @@
 					</ul>
 				</div>
 			</div>
-
 			<div class="col-lg-3 col-md-4 col-sm-12">
 				<div class="footer-box pages">
 					<h2 class="widget-title">Páginas</h2>
@@ -166,7 +145,6 @@
 					</ul>
 				</div>
 			</div>
-
 			<div class="col-lg-3 col-md-4 col-sm-12">
 				<div class="footer-box get-in-touch">
 					<h2 class="widget-title">Nuestras redes</h2>
@@ -191,25 +169,15 @@
 
 
 <script src="{% static 'core/js/jquery-1.11.3.min.js' %}"></script>
-
 <script src="{% static 'core/bootstrap/js/bootstrap.min.js' %}"></script>
-
 <script src="{% static 'core/js/jquery.countdown.js' %}"></script>
-
 <script src="{% static 'core/js/jquery.isotope-3.0.6.min.js' %}"></script>
-
 <script src="{% static 'core/js/waypoints.js' %}"></script>
-
 <script src="{% static 'core/js/owl.carousel.min.js' %}"></script>
-
 <script src="{% static 'core/js/jquery.magnific-popup.min.js' %}"></script>
-
 <script src="{% static 'core/js/jquery.meanmenu.min.js' %}"></script>
-
 <script src="{% static 'core/js/sticker.js' %}"></script>
-
 <script src="{% static 'core/js/main.js' %}"></script>
-
 <script src="{% static 'core/js/mensaje.js' %}"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

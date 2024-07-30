@@ -4,11 +4,11 @@
 <style>
 	.product-image img {
 		height: 200px;
-		/* Define la altura deseada */
+
 		width: auto;
-		/* Ajusta el ancho automáticamente para mantener la proporción */
+
 		object-fit: cover;
-		/* Corta la imagen para llenar el contenedor manteniendo la proporción */
+
 	}
 
 	.product-lists {
@@ -25,9 +25,9 @@
 
 	.product-content {
 		text-align: center;
-		/* Centra el texto y el botón dentro de este contenedor */
+
 		padding: 20px;
-		/* Espaciado interno del contenedor */
+
 	}
 
 
@@ -37,15 +37,15 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		/* Centra los botones horizontalmente */
+
 	}
 
 	.product-buttons {
 		display: flex;
 		gap: 10px;
-		/* Espacio entre los botones */
+
 		margin-top: 10px;
-		/* Espacio superior entre el título y los botones */
+
 	}
 
 	.product-buttons .cart-btn {
@@ -54,18 +54,18 @@
 		padding: 10px 15px;
 		text-decoration: none;
 		color: #fff;
-		/* Cambia el color del texto según tu diseño */
+
 		background-color: #ffde59;
-		/* Cambia el color de fondo según tu diseño */
+
 		border-radius: 4px;
-		/* Bordes redondeados */
+
 		transition: background-color 0.3s;
-		/* Transición suave para el hover */
+
 	}
 
 	.product-buttons .cart-btn:hover {
 		background-color: #263e58;
-		/* Cambia el color de fondo al pasar el ratón */
+
 	}
 
 
@@ -86,15 +86,13 @@
 {% endblock %}
 {% block contenido %}
 
-<!-- PreLoader -->
+
 <div class="loader">
 	<div class="loader-inner">
 		<div class="circle"></div>
 	</div>
 </div>
-<!-- PreLoader Ends -->
 
-<!-- search area -->
 <div class="search-area">
 	<div class="container">
 		<div class="row">
@@ -111,9 +109,7 @@
 		</div>
 	</div>
 </div>
-<!-- end search area -->
 
-<!-- breadcrumb-section -->
 <div class="hero-area hero-bg">
 	<div class="container">
 		<div class="row">
@@ -131,12 +127,10 @@
 		</div>
 	</div>
 </div>
-<!-- end breadcrumb section -->
 
-<!-- products -->
 <div class="product-section mt-150 mb-150">
 	<div class="container">
-		<!-- Filtros de productos -->
+
 		<div class="row">
 			<div class="col-md-12">
 				<div class="product-filters">
@@ -149,9 +143,11 @@
 				</div>
 			</div>
 		</div>
+		{% if user.is_authenticated %}
 
 		<div class="product-lists">
 			{% for producto in listado %}
+			
 			<div class="single-product-item {{ producto.tipo.descripcion|slugify }}">
 				<div class="product-image">
 					<a href="{% url 'producto' producto.id %}"><img src="{{ producto.imagen.url }}" alt=""></a>
@@ -163,15 +159,38 @@
 						{% if user.is_authenticated and user.username == 'admin' %}
 						<a href="{% url 'update' producto.id %}" class="cart-btn"><i class="fa fa-refresh"></i>
 							Editar</a>
-							<a class="cart-btn" onclick="deleteProducto({{ producto.id }})"><i class="fa fa-trash"></i> Eliminar</a>
-
-							
+						<a class="cart-btn" onclick="deleteProducto({{ producto.id }})"><i class="fa fa-trash"></i>
+							Eliminar</a>
 						{% endif %}
 					</div>
 				</div>
 			</div>
+		
 			{% endfor %}
 		</div>
+
+		{% else %}
+
+
+		<div class="product-lists">
+			{% for producto in listado %}
+			{% if producto.vigente == 1 %}
+			<div class="single-product-item {{ producto.tipo.descripcion|slugify }}">
+				<div class="product-image">
+					<a href="{% url 'producto' producto.id %}"><img src="{{ producto.imagen.url }}" alt=""></a>
+				</div>
+				<div class="product-content">
+					<h3>{{ producto.nombre }}</h3>
+					<div class="product-buttons">
+						<a href="{% url 'producto' producto.id %}" class="cart-btn"><i class="fas fa-eye"></i> Ver</a>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+			{% endfor %}
+		</div>
+
+		{% endif %}
 
 
 
@@ -184,7 +203,6 @@
 						{% else %}
 						<li class="disabled"><a href="#">Anterior</a></li>
 						{% endif %}
-
 						{% for num in listado.paginator.page_range %}
 						{% if listado.number == num %}
 						<li><a class="active" href="#">{{ num }}</a></li>
@@ -204,7 +222,7 @@
 		</div>
 	</div>
 </div>
-<!-- end products -->
+
 
 
 
@@ -215,18 +233,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
 <script>
 	$(document).ready(function () {
-		// Inicializar Isotope
+
 		var $grid = $('.product-lists').isotope({
 			itemSelector: '.single-product-item',
 			layoutMode: 'fitRows'
 		});
 
-		// Filtrar items al hacer click en un filtro
+
 		$('.product-filters').on('click', 'li', function () {
 			var filterValue = $(this).attr('data-filter');
 			$grid.isotope({ filter: filterValue });
 
-			// Cambiar la clase 'active' en el filtro seleccionado
+
 			$('.product-filters li').removeClass('active');
 			$(this).addClass('active');
 		});
@@ -235,8 +253,7 @@
 
 
 	function deleteProducto(id) {
-		//alert(id);
-		//console.log("ID: "+id);
+
 		Swal.fire({
 			title: 'Eliminar',
 			text: '¿Desea eliminar producto?',
