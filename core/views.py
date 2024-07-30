@@ -147,3 +147,12 @@ def user_login(request):
         form = AuthenticationForm()
     
     return render(request, 'registration/login.html', {'form': form})
+
+from django.contrib.auth import logout
+
+def custom_logout(request):
+    if request.method == "POST":
+        logout(request)
+        return redirect('index')  # Redirige a la página de inicio o a la que desees
+    else:
+        return redirect('index')

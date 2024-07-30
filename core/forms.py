@@ -21,7 +21,7 @@ class ProductoForm(forms.ModelForm):
             'caracteristica',
             'equipamiento'
         ]
-        widgets = {
+        widgets = { 
             'nombre': forms.TextInput(attrs={'class': 'form-control'}),
             'descripcion': forms.Textarea(attrs={'class': 'form-control', 'rows': 3}),
             'tipo': forms.Select(attrs={'class': 'form-control'}),
@@ -30,7 +30,7 @@ class ProductoForm(forms.ModelForm):
             'marca': forms.TextInput(attrs={'class': 'form-control'}),
             'modelo': forms.TextInput(attrs={'class': 'form-control'}),
             'motor': forms.TextInput(attrs={'class': 'form-control'}),
-            'potencia': forms.NumberInput(attrs={'class': 'form-control'}),
+            'potencia': forms.TextInput(attrs={'class': 'form-control'}),
             'traccion': forms.TextInput(attrs={'class': 'form-control'}),
             'alimentacion': forms.TextInput(attrs={'class': 'form-control'}),
             'neumaticos': forms.TextInput(attrs={'class': 'form-control'}),

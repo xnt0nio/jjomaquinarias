@@ -20,6 +20,28 @@
         text-align: center; /* Centrado del texto */
         margin-bottom: 20px; /* Margen inferior para separación */
     }
+.boxed-btn {
+  background-color: #ffde59; /* Cambia esto por el color que desees */
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boxed-btn:hover {
+  background-color: #263e58; /* Cambia esto por el color de hover que desees */
+}
+
+/* Estilo para centrar el contenedor del botón */
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 </style>
 {% endblock %}
 
@@ -157,7 +179,7 @@
                         
                         
                         <!-- Botón de guardar -->
-                        <button type="submit" class="btn btn-success">Guardar</button>
+                        <button type="submit" class="boxed-btn">Guardar</button>
                     </form>
                 </div>
             </div>

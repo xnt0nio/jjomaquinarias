@@ -1395,7 +1395,7 @@ a.mobile-show.search-bar-icon:hover {
 }
 
 .hero-area {
-  height: 38vh;
+  height: 39vh;
   position: relative;
   z-index: 1;
 }
@@ -1412,7 +1412,7 @@ html, body {
   height: 100%;
   content: "";
   background-color: #182429;
-  z-index: -1;
+  z-index: -4;
   opacity: 0.6;
 }
 
@@ -1719,7 +1719,7 @@ p.excerpt {
 
 .single-article-section {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 20px; /* Espacio entre el texto y la imagen */
 }
@@ -1731,26 +1731,30 @@ p.excerpt {
 
 .single-artcile-bg {
   background-image: url('{% static "core/img/jjoMaquinarias/logo.jpg" %}');
-  background-size: cover;
-  background-position: center;
-  height: 400px;
-  width: 400px;
+  background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+  height: auto; /* Ajusta la altura automáticamente */
+  max-width: 100%; /* Asegura que la imagen no se extienda fuera del contenedor */
   border-radius: 5px;
   margin-bottom: 20px;
-  flex: 0 0 auto; /* Asegura que la imagen tenga tamaño fijo y no se estire */
+  flex-shrink: 0; /* Evita que la imagen se reduzca más allá de su tamaño natural */
 }
 
-.single-article-text h2 {
+.single-article-text h2, .single-article-text h3 {
   font-size: 24px;
   font-weight: 600;
   line-height: 1.4;
-  margin-bottom: 10px;
+  margin-bottom: 30px; /* Espacio debajo del título */
+  margin-top: 30px; /* Espacio arriba del título */
+  text-align: center; /* Centra el texto del título */
 }
 
 .single-article-text p {
   font-size: 15px;
   line-height: 1.6;
   color: #263e58;
+  text-align: justify; /* Justifica el texto de los párrafos */
 }
 
 .comments-list-wrap {
@@ -2771,8 +2775,12 @@ table.order-details tbody td {
 .single-product-item {
   -webkit-box-shadow: 0 0 20px #e4e4e4;
   box-shadow: 0 0 20px #e4e4e4;
-  padding-bottom: 50px;
   border-radius: 5px;
+  padding: 15px; /* Aumenta el relleno si es necesario */
+  min-height: 450px; /* Ajusta esta altura mínima según tus necesidades */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Asegura que el contenido se distribuya verticalmente */
 }
 
 /* -----------------------------------------------------------------------------
