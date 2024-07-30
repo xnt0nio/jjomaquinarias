@@ -26,7 +26,7 @@ def add(request):
         formulario = ProductoForm(request.POST, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
-            print(request, "Producto almacenado correctamente")
+            messages.success(request, "Producto almacenado correctamente")
     return render(request, 'core/add-product.html', data)
 
 
@@ -97,7 +97,7 @@ def contacto(request):
         form = MensajeForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Mensaje enviado exitosamente.')
+            messages.success(request, "Mensaje enviado correctamente")
             return redirect('contacto')
         else:
             messages.error(request, 'Por favor corrige los errores.')
@@ -137,7 +137,7 @@ def user_login(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                messages.success(request, f"Bienvenido, {username}!")
+                
                 return redirect('index')  
             else:
                 messages.error(request, "Nombre de usuario o contraseña incorrectos.")

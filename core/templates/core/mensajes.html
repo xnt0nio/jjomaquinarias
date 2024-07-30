@@ -99,7 +99,7 @@
 </div>
 <!-- PreLoader Ends -->
 
-
+{% if mensajes %}
 
 <div class="cards-container">
     {% for mensaje in mensajes %}
@@ -120,8 +120,27 @@
     </div>
     {% endfor %}
 </div>
+{% else %}
+<div class="full-height-section error-section">
+    <div class="full-height-tablecell">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 text-center">
+                    <div class="error-text">
+                        <i class="far fa-sad-cry"></i>
+                        <h1>Sin mensajes por el momento</h1>
+                        <p>Actualmente no hay mensajes disponibles. Los nuevos mensajes aparecerán aquí.</p>
+                        <a href="{% url 'index' %}" class="boxed-btn">Regresar al Inicio</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+{% endif %}
 {% endblock %}
+
 
 {% block js %}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
