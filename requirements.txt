@@ -5,6 +5,6 @@ pillow
 django-rest-framework
 pymysql
 mysqlclient
-django-jazzmin==2.5.7
+django-jazzmin==2.4.9
 reportlab
 crispy-bootstrap4
