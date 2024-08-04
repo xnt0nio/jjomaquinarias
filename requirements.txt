@@ -7,5 +7,4 @@ pymysql
 mysqlclient
 django-jazzmin
 reportlab
-googletrans==4.0.0-rc1
 crispy-bootstrap4
