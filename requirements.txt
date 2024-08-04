@@ -1,10 +1,10 @@
-django==3.1.2
+django==4.2
 django-admin-interface
 django-crispy-forms
 pillow
-django-rest-framework
+djangorestframework
 pymysql
 mysqlclient
-django-jazzmin==2.4.9
+django-jazzmin
 reportlab
 crispy-bootstrap4
