@@ -12,7 +12,7 @@
 
 
 
-    
+
 
     .section-title {
         font-size: 1.5rem;
@@ -42,9 +42,12 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        height: 400px; /* Ajusta la altura según tus necesidades */
-        width: 100%;  /* Cambiado a 100% para ajustar al contenedor */
-        max-width: 400px; /* Ajusta el ancho máximo */
+        height: 400px;
+        /* Ajusta la altura según tus necesidades */
+        width: 100%;
+        /* Cambiado a 100% para ajustar al contenedor */
+        max-width: 400px;
+        /* Ajusta el ancho máximo */
         border-radius: 5px;
         margin-bottom: 40px;
         margin-top: 20px;
@@ -71,7 +74,7 @@
     }
 
     .orange-text {
-        color: orange;
+        color: #ffde59;
     }
 
     .service-history-container {
@@ -82,7 +85,8 @@
     }
 
     .service-history-container p:last-of-type {
-        margin-bottom: 40px; /* Añadir más separación para el último párrafo */
+        margin-bottom: 40px;
+        /* Añadir más separación para el último párrafo */
     }
 
     /* Estilos para tabletas */
@@ -124,40 +128,62 @@
             font-size: 0.875rem;
         }
     }
+
+
+
+
+
+
+    .section-title {
+        position: relative;
+        /* Permite ajustes precisos dentro del contenedor */
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 60px auto;
+        /* Espacio vertical alrededor del título */
+        color: #333;
+        text-align: center;
+        /* Centra el texto dentro del contenedor */
+        width: 100%;
+        /* Asegura que el título ocupe el ancho completo del contenedor */
+        max-width: 1200px;
+        /* Limita el ancho máximo para mantenerlo centrado en contenedores grandes */
+    }
+
+    .title-wrapper {
+        position: relative;
+        left: 20px;
+        /* Ajusta este valor para mover el título hacia la izquierda */
+    }
+
+    .section-title h1 {
+        margin: 0;
+        /* Eliminar márgenes adicionales si es necesario */
+    }
 </style>
 {% endblock %}
 
 {% block contenido %}
+<div class="section-title">
+    <div class="title-wrapper">
+        <h1><span class="orange-text">Sobre</span> nosotros</h1>
+    </div>
+</div>
 
-<div class="hero-area hero-bg">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-9 offset-lg-2 text-center">
-				<div class="hero-text">
-					<div class="hero-text-tablecell">
-						<p class="subtitle">Conoce todas nuestras Maquinarias</p>
-						<h1>Nuestros servicios</h1>
-						<div class="hero-btns">
 
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>  
+
 
 <div class="single-article-section">
     <div class="single-article-content">
         <div class="single-article-text">
-            <h3><span class="orange-text">Mis</span>ión</h3>
+            <h3><span class="orange-text">Misión</span></h3>
             <p>En JJO Maquinarias nos especializamos en el arriendo de maquinaria pesada para la industria,
                 proporcionando equipos de alta calidad y confiabilidad para satisfacer las necesidades
                 operativas de nuestros clientes. Nuestra misión es facilitar el progreso y la eficiencia en
                 proyectos industriales y de construcción, mediante soluciones flexibles y accesibles que
                 aseguren el cumplimiento de los más altos estándares de rendimiento y seguridad.</p>
 
-            <h3><span class="orange-text">Vis</span>ión</h3>
+            <h3><span class="orange-text">Visión</span></h3>
             <p>Ser reconocidos como líderes en el sector de arriendo de maquinaria pesada, destacándonos por
                 nuestra flota diversificada, calidad excepcional de servicio y compromiso con la innovación.
                 Nos esforzamos por ser el aliado preferido de las industrias que buscan eficiencia y
@@ -169,7 +195,7 @@
 </div>
 
 <div class="service-history-container">
-    <h3 class="section-title"><span class="orange-text">Nuestros</span> servicios</h3>
+    <h3 class="section-title"><span class="orange-text">Nuestros servicios</span></h3>
     <p>En JJO Maquinarias, ofrecemos una amplia gama de servicios especializados en el arriendo de
         maquinaria pesada para satisfacer las necesidades variadas de nuestros clientes en proyectos
         industriales y de construcción. Nuestra flota de equipos incluye:</p>
@@ -186,7 +212,7 @@
         expectativas de nuestros clientes, respaldadas por nuestro compromiso con la calidad y la
         satisfacción del cliente en cada paso del camino.</p>
 
-    <h3 class="section-title"><span class="orange-text">Nuestra</span> historia</h3>
+    <h3 class="section-title"><span class="orange-text">Nuestra historia</span></h3>
     <p>Nuestra empresa, JJO MAQUINARIAS, comenzó su trayectoria en el año 2019 con la visión de cubrir
         una necesidad creciente en el sector industrial y de construcción. Fundada por Óscar Ortega y
         Jorge Pérez en Valparaíso, inicialmente nos especializamos en el arriendo de equipos específicos

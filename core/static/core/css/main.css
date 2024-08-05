@@ -1383,6 +1383,7 @@ a.mobile-show.search-bar-icon:hover {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  min-height: 400px; /* Ajusta esta altura según tus necesidades */
 }
 
 
@@ -1393,7 +1394,7 @@ a.mobile-show.search-bar-icon:hover {
     padding: -1px !important;
   }
 }
-
+/* Estilos para ocultar el segundo contenedor en dispositivos móviles */
 
 
 
@@ -1408,10 +1409,29 @@ a.mobile-show.search-bar-icon:hover {
 }
 
 .hero-area {
-  height: 39vh;
+  min-height: 450px; /* Ajusta esta altura según tus necesidades */
+  height: 80%; /* Para que la altura del contenedor sea del 100% del viewport */
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
+ 
+
+.section-title {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Asegura que el contenido se alinee verticalmente */
+  text-align: center; /* Asegura que el texto dentro esté centrado */
+  font-size: 2rem; /* Ajusta el tamaño del texto del título si es necesario */
+  font-weight: bold;
+  color: #333;
+  margin: 60px auto; /* Espacio vertical alrededor del título */
+  width: 100%; /* Asegura que el título ocupe el ancho completo del contenedor */
+  max-width: 1200px; /* Limita el ancho máximo para mantenerlo centrado en contenedores grandes */
+}
+
+
+
+
 
 html, body {
   height: 100%;

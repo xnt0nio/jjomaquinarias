@@ -47,7 +47,82 @@
             margin-top: 20px;
         }
     }
+
+    .section-title {
+    display: flex !important;
+    justify-content: center !important; /* Centra horizontalmente el contenido */
+    align-items: center !important; /* Centra verticalmente el contenido */
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+    color: #333 !important;
+    margin: 60px auto !important; /* Espacio vertical alrededor del título */
+    width: 100% !important; /* Asegura que el título ocupe el ancho completo del contenedor */
+    max-width: 1200px !important; /* Limita el ancho máximo para mantenerlo centrado en contenedores grandes */
+}
+
+.section-title {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Asegura que el contenido se alinee verticalmente */
+    text-align: center; /* Asegura que el texto dentro esté centrado */
+    font-size: 2rem; /* Ajusta el tamaño del texto del título si es necesario */
+    font-weight: bold;
+    color: #333;
+    margin: 60px auto; /* Espacio vertical alrededor del título */
+    width: 100%; /* Asegura que el título ocupe el ancho completo del contenedor */
+    max-width: 1200px; /* Limita el ancho máximo para mantenerlo centrado en contenedores grandes */
+}
+
+
+
+
+.section-title {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Asegura que el contenido se alinee verticalmente */
+    text-align: center; /* Asegura que el texto dentro esté centrado */
+    font-size: 2rem; /* Ajusta el tamaño del texto del título si es necesario */
+    font-weight: bold;
+    color: #333;
+    margin: 60px auto; /* Espacio vertical alrededor del título */
+    width: 100%; /* Asegura que el título ocupe el ancho completo del contenedor */
+    max-width: 1200px; /* Limita el ancho máximo para mantenerlo centrado en contenedores grandes */
+}
+.section-title {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Asegura que el contenido se alinee verticalmente */
+    text-align: center; /* Asegura que el texto dentro esté centrado */
+    font-size: 2rem; /* Ajusta el tamaño del texto del título si es necesario */
+    font-weight: bold;
+    color: #333;
+    margin: 60px auto; /* Espacio vertical alrededor del título */
+    width: 100%; /* Asegura que el título ocupe el ancho completo del contenedor */
+    max-width: 1200px; /* Limita el ancho máximo para mantenerlo centrado en contenedores grandes */
+}
+
+.title-wrapper {
+    display: flex; /* Usa flexbox para centrar el contenido */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    width: 100%; /* Asegura que el contenedor ocupe el ancho completo del contenedor principal */
+}
+
+.title-part {
+    display: inline; /* Asegura que el tamaño se ajuste al contenido */
+}
+
+.title-part-orange {
+    color: #ffde59 !important; /* Aplica el color naranja con alta prioridad */
+}
+
+.title-part-blue {
+    color: blue !important; /* Aplica el color azul con alta prioridad */
+}
+
+
 </style>
+
+
 
 
 {% block css %}
@@ -62,22 +137,16 @@
 </div>
 
 
-<div class="hero-area hero-bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-9 offset-lg-2 text-center">
-                <div class="hero-text">
-                    <div class="hero-text-tablecell">
-                        <p class="subtitle">¡Estamos aquí para ayudarte!</p>
-                        <h1>Contáctanos</h1>
-                        <div class="hero-btns">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
+<div class="section-title">
+    <div class="title-wrapper">
+        <h1><span class="orange-text">Contác</span>tanos</h1>
     </div>
 </div>
+
+
+
 
 
 <div class="contact-from-section mt-150 mb-150">
