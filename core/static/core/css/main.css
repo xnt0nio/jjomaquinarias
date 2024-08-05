@@ -1379,11 +1379,24 @@ a.mobile-show.search-bar-icon:hover {
 
 ----------------------------------------------------------------------------- */
 .hero-bg {
-  background-image: url(../img/jjoMaquinarias/materiales.png);
+  background-image: url(../img/jjoMaquinarias/bannerLogo3.png);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
+
+
+@media (min-width: 0px) and (max-width: 475px) { /* iPhone SE hasta Samsung S24 Ultra */
+  .hero-area,
+  .hero-bg {
+    margin: -1px !important;
+    padding: -1px !important;
+  }
+}
+
+
+
+
 
 .hero-text {
   display: table;
@@ -1407,14 +1420,16 @@ html, body {
 .hero-area:after {
   position: absolute;
   left: 0;
-  top: 0;
+  top: -2;
   width: 100%;
   height: 100%;
   content: "";
   background-color: #182429;
-  z-index: -4;
-  opacity: 0.6;
+  z-index: -1;
+  opacity: 0.4;
 }
+
+
 
 .hero-text p.subtitle {
   color: #ffde59;
@@ -1428,7 +1443,7 @@ html, body {
   font-size: 64px;
   font-weight: 700;
   line-height: 1.3;
-  color: #fff;
+  color: #ffffff;
 }
 
 .hero-area div {
